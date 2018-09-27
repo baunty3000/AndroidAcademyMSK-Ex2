@@ -4,22 +4,24 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
         android:layout_height="match_parent" android:id="@+id/rlMain"
-        android:focusableInTouchMode="true" android:descendantFocusability="beforeDescendants">
+        android:focusableInTouchMode="true" android:descendantFocusability="beforeDescendants"
+>
 
     <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="374dp"
             app:srcCompat="@drawable/photo"
             android:id="@+id/ivPhoto"
-            android:layout_height="208dp"
+            android:layout_height="match_parent"
             android:scaleType="centerCrop" android:contentDescription="@string/my_photo"
-            android:layout_alignParentTop="true" android:layout_centerHorizontal="true"/>
+            android:layout_alignParentStart="true" android:layout_alignParentTop="true"/>
     <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/svBody"
-            android:layout_below="@+id/ivPhoto" android:layout_marginTop="10dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginEnd="16dp" android:layout_marginBottom="10dp"
-            android:layout_above="@+id/llSocial">
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp" android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@+id/ivPhoto"
+            android:layout_centerVertical="true" android:layout_above="@+id/llSocial">
         <LinearLayout android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:orientation="vertical"
@@ -115,7 +117,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/llSocial"
-            android:gravity="center_horizontal" android:layout_above="@+id/llFooter">
+            android:gravity="center_horizontal" android:layout_above="@+id/llFooter"
+            android:layout_toEndOf="@+id/ivPhoto">
         <ImageButton
                 android:layout_width="33dp" android:background="@null"
                 android:layout_height="33dp" app:srcCompat="@drawable/telegram_icon"
@@ -138,7 +141,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/llFooter"
-            android:layout_alignParentBottom="true">
+            android:layout_alignParentBottom="true" android:layout_toEndOf="@+id/ivPhoto">
         <TextView
                 android:text="@string/copyright_about"
                 android:layout_width="match_parent"

@@ -10,7 +10,7 @@
             android:layout_width="wrap_content"
             app:srcCompat="@drawable/photo"
             android:id="@+id/ivPhoto"
-            android:layout_height="208dp"
+            android:layout_height="369dp"
             android:scaleType="centerCrop" android:contentDescription="@string/my_photo"
             android:layout_alignParentTop="true" android:layout_centerHorizontal="true"/>
     <ScrollView

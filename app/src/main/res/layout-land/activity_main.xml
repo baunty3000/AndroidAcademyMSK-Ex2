@@ -1,151 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-        android:layout_height="match_parent" android:id="@+id/rlMain"
-        android:focusableInTouchMode="true" android:descendantFocusability="beforeDescendants"
->
-
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/llMain"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:focusableInTouchMode="true"
+              android:descendantFocusability="beforeDescendants" android:orientation="horizontal">
     <ImageView
-            android:layout_width="170dp"
+            android:layout_width="match_parent"
             app:srcCompat="@drawable/photo"
             android:id="@+id/ivPhoto"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop" android:contentDescription="@string/my_photo"
-            android:layout_alignParentStart="true" android:layout_alignParentTop="true"/>
-    <ScrollView
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/my_photo"
+            android:layout_weight="1.5"/>
+    <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/svBody"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp" android:layout_marginBottom="10dp"
-            android:layout_toEndOf="@+id/ivPhoto"
-            android:layout_centerVertical="true" android:layout_above="@+id/llSocial">
-        <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:orientation="vertical"
-                      android:id="@+id/llsv">
-            <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/llJob" android:layout_marginBottom="8dp">
-                <ImageView
-                        android:layout_height="28dp" app:srcCompat="@drawable/sovest_icon"
-                        android:id="@+id/ivJobIcon" android:background="@null"
-                        android:scaleType="fitXY"
-                        android:layout_width="28dp"
-                        tools:ignore="ContentDescription"/>
-                <TextView
-                        android:text="@string/about_Job"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/tvJob"
-                        android:textSize="16sp"
-                        android:layout_marginStart="8dp" android:layout_marginTop="4dp"/>
-            </LinearLayout>
-            <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/llAAMsk"
-                    android:layout_marginBottom="8dp">
-                <ImageView
-                        android:layout_height="28dp"
-                        app:srcCompat="@android:drawable/sym_def_app_icon"
-                        android:id="@+id/ivAAIcon"
-                        android:scaleType="fitXY"
-                        android:layout_width="28dp" android:adjustViewBounds="false"
-                        android:background="@null" tools:ignore="ContentDescription"/>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/tvAAText"
-                        android:textSize="16sp" android:text="@string/android_academy"
-                        android:layout_marginStart="8dp" android:layout_marginTop="4dp"/>
-            </LinearLayout>
-            <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/llMessage"
-                    android:layout_marginBottom="8dp" android:layout_marginTop="8dp">
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="1sp"
-                        android:background="#d70000" android:id="@+id/tvTopBorder"
-                        tools:ignore="SmallSp" android:layout_marginBottom="8dp"/>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/tvMessage"
-                        android:textSize="16sp"
-                        android:text="@string/about"
-                        android:layout_marginBottom="8dp"/>
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="1sp"
-                        android:background="#d70000" android:id="@+id/tvBottomBorder"
-                        tools:ignore="SmallSp"
-                        android:layout_marginBottom="8dp"/>
-                <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
-                        android:ems="10"
-                        android:id="@+id/ptMessage" android:hint="@string/write_message"
-                        android:textSize="16sp"
-                        android:focusable="auto"/>
-            </LinearLayout>
-            <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="visible" android:id="@+id/llSend" android:gravity="end"
-                    android:layout_marginBottom="8dp">
-                <Button
-                        android:text="@string/send_a_message"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/btnSend"
-                        android:background="@null" android:textSize="16sp"
-                        android:textColor="@color/colorAccent"/>
-            </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/llSocial"
-            android:gravity="center_horizontal" android:layout_above="@+id/llFooter"
-            android:layout_toEndOf="@+id/ivPhoto">
-        <ImageButton
-                android:layout_width="33dp" android:background="@null"
-                android:layout_height="33dp" app:srcCompat="@drawable/telegram_icon"
-                android:id="@+id/ibTelIcon" android:scaleType="centerCrop"
-                android:padding="5dp" tools:ignore="ContentDescription"
-        />
-        <ImageButton
-                android:layout_width="33dp" android:background="@null"
-                android:layout_height="33dp" app:srcCompat="@drawable/vk_icon"
-                android:id="@+id/ibVkIcon" android:scaleType="centerCrop"
-                android:padding="5dp" tools:ignore="ContentDescription"/>
-        <ImageButton
-                android:layout_width="33dp" android:background="@null"
-                android:layout_height="33dp" app:srcCompat="@drawable/instagram_icon"
-                android:id="@+id/ibInstIcon" android:scaleType="centerCrop"
-                android:padding="5dp" tools:ignore="ContentDescription"/>
-    </LinearLayout>
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/llFooter"
-            android:layout_alignParentBottom="true" android:layout_toEndOf="@+id/ivPhoto">
-        <TextView
-                android:text="@string/copyright_about"
+            android:layout_height="match_parent"
+            android:id="@+id/rlMain" android:layout_weight="1">
+        <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/tvAbout"
-                android:textSize="12sp" android:gravity="center_horizontal"/>
-    </LinearLayout>
-</RelativeLayout>
+                android:layout_height="match_parent"
+                android:id="@+id/svBody"
+                android:layout_marginTop="@dimen/body_margin_top"
+                android:layout_marginStart="@dimen/body_margin_start"
+                android:layout_marginEnd="@dimen/body_margin_end"
+                android:layout_marginBottom="@dimen/body_margin_bottom"
+                android:layout_above="@+id/llSocial">
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="vertical"
+                          android:id="@+id/llsv">
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/llJob"
+                        android:layout_marginBottom="@dimen/bodyll_margin_bottom">
+                    <ImageView
+                            android:layout_height="@dimen/body_ico_size"
+                            app:srcCompat="@drawable/sovest_icon"
+                            android:id="@+id/ivJobIcon"
+                            android:background="@null"
+                            android:scaleType="fitXY"
+                            android:layout_width="@dimen/body_ico_size"
+                            tools:ignore="ContentDescription"/>
+                    <TextView
+                            android:text="@string/about_Job"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tvJob"
+                            android:textSize="@dimen/def_text_size"
+                            android:layout_marginStart="@dimen/bodytv_margin_start"
+                            android:layout_marginTop="@dimen/bodyll_margin_top"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/llAAMsk"
+                        android:layout_marginBottom="@dimen/bodyll_margin_bottom">
+                    <ImageView
+                            android:layout_height="@dimen/body_ico_size"
+                            app:srcCompat="@android:drawable/sym_def_app_icon"
+                            android:id="@+id/ivAAIcon"
+                            android:scaleType="fitXY"
+                            android:layout_width="@dimen/body_ico_size"
+                            android:adjustViewBounds="false"
+                            android:background="@null"
+                            tools:ignore="ContentDescription"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tvAAText"
+                            android:textSize="@dimen/def_text_size"
+                            android:text="@string/android_academy"
+                            android:layout_marginStart="@dimen/bodytv_margin_start"
+                            android:layout_marginTop="@dimen/bodyll_margin_top"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/llMessage"
+                        android:layout_marginBottom="@dimen/bodyll_margin_bottom"
+                        android:layout_marginTop="@dimen/bodyll_margin_top">
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/line_text_size"
+                            android:background="@color/line_color"
+                            android:id="@+id/tvTopBorder"
+                            tools:ignore="SmallSp"
+                            android:layout_marginBottom="@dimen/bodyll_margin_bottom"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tvMessage"
+                            android:textSize="@dimen/def_text_size"
+                            android:text="@string/about"
+                            android:layout_marginBottom="@dimen/bodyll_margin_bottom"/>
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/line_text_size"
+                            android:background="@color/line_color"
+                            android:id="@+id/tvBottomBorder"
+                            tools:ignore="SmallSp"
+                            android:layout_marginBottom="@dimen/bodyll_margin_bottom"/>
+                    <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:id="@+id/ptMessage"
+                            android:hint="@string/write_message"
+                            android:textSize="@dimen/def_text_size"
+                            tools:ignore="Autofill"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        android:id="@+id/llSend"
+                        android:gravity="end"
+                        android:layout_marginBottom="@dimen/bodyll_margin_bottom">
+                    <Button
+                            android:text="@string/send_a_message"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/btnSend"
+                            android:background="@null"
+                            android:textSize="@dimen/def_text_size"
+                            android:textColor="@color/colorAccent"/>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/llSocial"
+                android:gravity="center_horizontal"
+                android:layout_above="@+id/llFooter">
+            <ImageButton
+                    android:layout_width="@dimen/footer_ico_size"
+                    android:background="@null"
+                    android:layout_height="@dimen/footer_ico_size"
+                    app:srcCompat="@drawable/telegram_icon"
+                    android:id="@+id/ibTelIcon"
+                    android:scaleType="centerCrop"
+                    android:padding="@dimen/footer_ico_padding"
+                    tools:ignore="ContentDescription"
+            />
+            <ImageButton
+                    android:layout_width="@dimen/footer_ico_size"
+                    android:background="@null"
+                    android:layout_height="@dimen/footer_ico_size"
+                    app:srcCompat="@drawable/vk_icon"
+                    android:id="@+id/ibVkIcon"
+                    android:scaleType="centerCrop"
+                    android:padding="@dimen/footer_ico_padding"
+                    tools:ignore="ContentDescription"/>
+            <ImageButton
+                    android:layout_width="@dimen/footer_ico_size"
+                    android:background="@null"
+                    android:layout_height="@dimen/footer_ico_size"
+                    app:srcCompat="@drawable/instagram_icon"
+                    android:id="@+id/ibInstIcon"
+                    android:scaleType="centerCrop"
+                    android:padding="@dimen/footer_ico_padding"
+                    tools:ignore="ContentDescription"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/llFooter"
+                android:layout_alignParentBottom="true">
+            <TextView
+                    android:text="@string/copyright_about"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvAbout"
+                    android:textSize="@dimen/footer_text"
+                    android:gravity="center_horizontal"/>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

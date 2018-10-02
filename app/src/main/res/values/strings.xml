@@ -8,4 +8,5 @@
     <string name="android_academy">Студент Android Academy</string>
     <string name="about_Job">Менеджер группы поддержки</string>
     <string name="copyright_about">© 2018 Sergey</string>
+    <string name="menu_about">About</string>
 </resources>

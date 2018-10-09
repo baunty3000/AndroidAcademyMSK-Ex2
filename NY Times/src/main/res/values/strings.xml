@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">NY Times</string>
+    <string name="my_photo">my photo</string>
+    <string name="about">Сергей, работаю в компании Qiwi с декабря 2014го. Пару лет работал специалистом группы поддержки, затем перешел в отдел рассчетного центра, где освоил SQL.
+        В данный момент работаю менеджером группы поддежки Совести, параллельно изучаю Java и Android</string>
+    <string name="send_a_message">Отправить сообщение</string>
+    <string name="write_message">Введите сообщение…</string>
+    <string name="android_academy">Студент Android Academy</string>
+    <string name="about_Job">Менеджер группы поддержки</string>
+    <string name="copyright_about">© 2018 Sergey</string>
+    <string name="menu_about">About</string>
+    <string name="article">Под потолком веранды над большим столом для многочисленных гостей располагалось гнездо, в котором в одиночестве сидела ласточка. Я не обратил бы на это внимания, если бы Геннадий с удивлением не спросил: «В здешние края ласточки всегда возвращаются так рано?»</string>
+    <string name="title">Осеннее настроение: Фотографии редких животных рыжего окраса</string>
+</resources>

@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ActivityAbout extends AppCompatActivity implements View.OnClickListener {
+    private static final int LAYOUT = R.layout.activity_about;
 
     private EditText mPtMessage;
     private Button mBtnAboutSend;
@@ -23,7 +24,7 @@ public class ActivityAbout extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
+        setContentView(LAYOUT);
 
         mPtMessage = findViewById(R.id.ptAboutMessage);
         mBtnAboutSend = findViewById(R.id.btnAboutSend);

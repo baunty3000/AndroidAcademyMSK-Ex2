@@ -24,9 +24,11 @@
     <dimen name="item_news_tv_margin_top">4dp</dimen>
     <dimen name="item_news_image_size">100dp</dimen>
 
-    <dimen name="full_news_appbar">300dp</dimen>
+    <dimen name="full_news_appbar">50dp</dimen>
     <dimen name="full_news_card_margin">16dp</dimen>
     <dimen name="full_news_text_margin_top">15dp</dimen>
 
+    <dimen name="horizontal_margin">16dp</dimen>
+    <dimen name="vertical_margin">16dp</dimen>
 
 </resources>

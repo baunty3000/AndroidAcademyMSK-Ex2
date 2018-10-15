@@ -17,13 +17,14 @@ import ru.malakhov.nytimes.data.DataUtils;
 import ru.malakhov.nytimes.data.NewsItem;
 
 public class ActivityRecyclerNews extends AppCompatActivity {
+    private static final int LAYOUT = R.layout.activity_recycler_news;
 
     private final String TAG = "info";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_news);
+        setContentView(LAYOUT);
         RecyclerView rvNews = findViewById(R.id.rvNews);
         List<NewsItem> newsItems = DataUtils.generateNews();
         rvNews.setAdapter(new AdapterRecyclerNews(this, newsItems));

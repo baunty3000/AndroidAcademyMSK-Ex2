@@ -9,75 +9,68 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Display;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.ObjectInputStream;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import ru.malakhov.nytimes.data.NewsItem;
 
 public class ActivityFullNews extends AppCompatActivity {
 
-    private TextView title;
-    private ImageView imageUrl;
-    private CollapsingToolbarLayout category;
+    private static final int LAYOUT = R.layout.activity_full_news;
+    private TextView tvTitle;
+    private ImageView ivPhoto;
+    private CollapsingToolbarLayout ltCaterory;
     private TextView publishDate;
     private TextView fullText;
-
-    private static final String KEY_TITLE = "KEY_NEWS";
-    private static final String KEY_IMAGE = "KEY_IMAGE";
-    private static final String KEY_CATEGORY = "KEY_CATEGORY";
-    private static final String KEY_DATE = "KEY_DATE";
-    private static final String KEY_TEXT = "KEY_TEXT";
-
+    private static final String EXTRA_KEY_NEWS = "EXTRA_KEY_NEWS";
     static String TAG = "info";
 
+    public static void start(@NonNull Context context, @NonNull NewsItem newsItem) {
+        final Intent intent = new Intent(context, ActivityFullNews.class);
+        intent.putExtra(EXTRA_KEY_NEWS, newsItem);
+        context.startActivity(intent);
+    }
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_full_news);
-
-        //получаем размер экрана
-        Display display = getWindowManager().getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);
-        int height = size.y;
-        //меняем наш height AppBarLayout в зависимости от размера экрана
-        AppBarLayout x = (AppBarLayout) findViewById(R.id.newsAppBar);
-        CoordinatorLayout.LayoutParams lp = (CoordinatorLayout.LayoutParams) x.getLayoutParams();
-        lp.height=height/2;
-        x.setLayoutParams(lp);
-
+        setContentView(LAYOUT);
+        //Добавление кнопки home
         final Toolbar toolbar = findViewById(R.id.newsToolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        title = findViewById(R.id.tvNewsTitle);
-        imageUrl = findViewById(R.id.ivNewsImage);
-        category = findViewById(R.id.ctlNews);
-        publishDate = findViewById(R.id.tvNewsDate);
-        fullText = findViewById(R.id.tvNewsFullText);
-
-        //наполняем форму данными
-        title.setText(getIntent().getStringExtra(KEY_TITLE));
-        Glide.with(this).load(getIntent().getStringExtra(KEY_IMAGE)).into(imageUrl);
-        category.setTitle(getIntent().getStringExtra(KEY_CATEGORY));
-        publishDate.setText(getIntent().getStringExtra(KEY_DATE));
-        fullText.setText(getIntent().getStringExtra(KEY_TEXT));
+        ActionBar supportActionBar = getSupportActionBar();
+        if (supportActionBar != null) {
+            supportActionBar.setDisplayHomeAsUpEnabled(true);
+        }
+        findViews();
+        setDataViews();
     }
 
-    public static void start(Context context, NewsItem newsItem){
-        Intent intent = new Intent(context, ActivityFullNews.class);
-        intent.putExtra(KEY_TITLE, newsItem.getTitle());
-        intent.putExtra(KEY_IMAGE, newsItem.getImageUrl());
-        intent.putExtra(KEY_CATEGORY, newsItem.getCategory().getName());
-        intent.putExtra(KEY_TEXT, newsItem.getFullText());
-        intent.putExtra(KEY_DATE, newsItem.getPublishDate().toString());
-        context.startActivity(intent);
+    private void findViews() {
+        tvTitle = findViewById(R.id.tvNewsTitle);
+        ivPhoto = findViewById(R.id.ivNewsImage);
+        ltCaterory = findViewById(R.id.ctlNews);
+        publishDate = findViewById(R.id.tvNewsDate);
+        fullText = findViewById(R.id.tvNewsFullText);
+    }
+
+    private void setDataViews() {
+        NewsItem newsItem = (NewsItem) getIntent().getParcelableExtra(EXTRA_KEY_NEWS);
+        tvTitle.setText(newsItem.getTitle());
+        Glide.with(this).load(newsItem.getImageUrl()).into(ivPhoto);
+        ltCaterory.setTitle(newsItem.getCategory().getName());
+        publishDate.setText(newsItem.getPublishDate().toString());
+        fullText.setText(newsItem.getFullText());
     }
 
     @Override
@@ -86,7 +79,7 @@ public class ActivityFullNews extends AppCompatActivity {
             case android.R.id.home:
                 finish();
                 return true;
+                default: throw new IllegalArgumentException("id не обработан "+item.getItemId());
         }
-        return super.onOptionsItemSelected(item);
     }
 }

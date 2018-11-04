@@ -1,14 +1,30 @@
 <resources>
     <string name="app_name">NY Times</string>
-    <string name="my_photo">my photo</string>
-    <string name="about">Сергей, работаю в компании Qiwi с декабря 2014го. Пару лет работал специалистом группы поддержки, затем перешел в отдел рассчетного центра, где освоил SQL.
+    <string name="menu_about">Об авторе</string>
+
+    <string name="random_article">Под потолком веранды над большим столом для многочисленных гостей располагалось гнездо, в котором в одиночестве сидела ласточка. Я не обратил бы на это внимания, если бы Геннадий с удивлением не спросил: «В здешние края ласточки всегда возвращаются так рано?»</string>
+    <string name="random_title">Осеннее настроение: Фотографии редких животных рыжего окраса</string>
+
+    <string name="about_photo">Фото</string>
+    <string name="about_job_description">Логотип работы</string>
+    <string name="about_job_title">Менеджер группы поддержки</string>
+    <string name="about_study_description">Study image</string>
+    <string name="about_study_title">Студент Android Academy</string>
+    <string name="bio">Сергей, работаю в компании Qiwi с декабря 2014го. Пару лет работал специалистом группы поддержки, затем перешел в отдел рассчетного центра, где освоил SQL.
         В данный момент работаю менеджером группы поддежки Совести, параллельно изучаю Java и Android</string>
-    <string name="send_a_message">Отправить сообщение</string>
-    <string name="write_message">Введите сообщение…</string>
-    <string name="android_academy">Студент Android Academy</string>
-    <string name="about_Job">Менеджер группы поддержки</string>
-    <string name="copyright_about">© 2018 Sergey</string>
-    <string name="menu_about">About</string>
-    <string name="article">Под потолком веранды над большим столом для многочисленных гостей располагалось гнездо, в котором в одиночестве сидела ласточка. Я не обратил бы на это внимания, если бы Геннадий с удивлением не спросил: «В здешние края ласточки всегда возвращаются так рано?»</string>
-    <string name="title">Осеннее настроение: Фотографии редких животных рыжего окраса</string>
+    <string name="about_message_hint">Введите сообщение</string>
+    <string name="about_message_send">Отправить сообщение</string>
+    <string name="about_copyright">©2018 Sergey</string>
+
+    <string name="news_image">Фото</string>
+    <string name="about_title">Малахов Сергей</string>
+    <string name="url_telegram">https://telegram.me/jaymsk</string>
+    <string name="url_vk">https://vk.com/s6000</string>
+    <string name="url_instagram">https://instagram.com/malakhov5</string>
+    <string name="my_email">baunty3000@gmail.com</string>
+    <string name="email_subject">Привет! Я из приложения !</string>
+    <string name="error_mail_client">Для отправки почты нужен почтовый клиент</string>
+    <string name="error_not_id">id не обработан</string>
+    <string name="error_not_browser">Установите браузер</string>
+
 </resources>

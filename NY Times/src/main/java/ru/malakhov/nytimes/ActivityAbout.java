@@ -4,85 +4,67 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ActivityAbout extends AppCompatActivity implements View.OnClickListener {
-    private static final int LAYOUT = R.layout.activity_about;
+public class ActivityAbout extends AppCompatActivity {
 
-    private EditText mPtMessage;
-    private Button mBtnAboutSend;
-    private ImageButton mIbAboutTelICO;
-    private ImageButton mIbAboutVkICO;
-    private ImageButton mIboutInstICO;
+    private static final int LAYOUT = R.layout.activity_about;
+    private static final String MAIL_TO_URI = "mailto:";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(LAYOUT);
-
-        mPtMessage = findViewById(R.id.ptAboutMessage);
-        mBtnAboutSend = findViewById(R.id.btnAboutSend);
-        mIbAboutTelICO = findViewById(R.id.ibAboutTelICO);
-        mIbAboutVkICO = findViewById(R.id.ibAboutVkICO);
-        mIboutInstICO = findViewById(R.id.ibAboutInstICO);
-
-        mBtnAboutSend.setOnClickListener(this);
-        mIbAboutTelICO.setOnClickListener(this);
-        mIbAboutVkICO.setOnClickListener(this);
-        mIboutInstICO.setOnClickListener(this);
-
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
-        }
+        startInit();
+        setHomeButton();
+        setLinkViews();
+        setEmailSending();
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnAboutSend:
-                sendEmail(new String[]{"baunty3000@gmail.com"}, "Привет! Я из приложения !",
-                        mPtMessage.getText().toString());
-                break;
-            case R.id.ibAboutTelICO:
-                openURL("https://telegram.me/jaymsk");
-                break;
-            case R.id.ibAboutVkICO:
-                openURL("https://vk.com/s6000");
-                break;
-            case R.id.ibAboutInstICO:
-                openURL("https://instagram.com/malakhov5");
-                break;
-        }
+    private void startInit() {
+        setContentView(LAYOUT);
+        getSupportActionBar().setTitle(getString(R.string.about_title));
+    }
+
+    private void setLinkViews(){
+        findViewById(R.id.telegram_ico).setOnClickListener(v -> openURL(getString(R.string.url_telegram)));
+        findViewById(R.id.vk_ico).setOnClickListener(v -> openURL(getString(R.string.url_vk)));
+        findViewById(R.id.instagram_ico).setOnClickListener(v -> openURL(getString(R.string.url_instagram)));
     }
 
     private void openURL(String url) {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(url));
+        Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse(url));
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         } else {
-            Toast.makeText(this, "Установите браузер", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.error_not_browser), Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void sendEmail(String[] to, String subject, String body) {
-        Intent sendEmailIntent = new Intent(Intent.ACTION_SENDTO);
-        sendEmailIntent.setData(Uri.parse("mailto:"));
-        sendEmailIntent.putExtra(Intent.EXTRA_EMAIL, to);
-        sendEmailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
-        sendEmailIntent.putExtra(Intent.EXTRA_TEXT, body);
+    private void sendEmail(String message) {
+        Intent sendEmailIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse(MAIL_TO_URI));
+        sendEmailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{getString(R.string.my_email)});
+        sendEmailIntent.putExtra(Intent.EXTRA_SUBJECT, R.string.email_subject);
+        sendEmailIntent.putExtra(Intent.EXTRA_TEXT, message);
         if (sendEmailIntent.resolveActivity(getPackageManager()) != null) {
             startActivity(sendEmailIntent);
         } else {
-            Toast.makeText(this, "Для отправки почты нужен почтовый клиент", Toast.LENGTH_SHORT)
+            Toast.makeText(this, getString(R.string.error_mail_client), Toast.LENGTH_SHORT)
                     .show();
+        }
+    }
+
+    private void setEmailSending(){
+        TextView ptMessage = findViewById(R.id.message_edit);
+        findViewById(R.id.message_send).setOnClickListener(v -> sendEmail(ptMessage.getText().toString()));
+    }
+
+    private void setHomeButton(){
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
     }
 
@@ -91,7 +73,9 @@ public class ActivityAbout extends AppCompatActivity implements View.OnClickList
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
-                return true;
+                break;
+            default:
+                throw new IllegalArgumentException(getString(R.string.error_not_id) + item.getItemId());
         }
         return super.onOptionsItemSelected(item);
     }

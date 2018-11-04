@@ -9,21 +9,27 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
+
 import java.util.List;
 
+import ru.malakhov.nytimes.data.DataUtils;
 import ru.malakhov.nytimes.data.NewsItem;
 
 import androidx.annotation.NonNull;
 
 public class AdapterRecyclerNews extends RecyclerView.Adapter<AdapterRecyclerNews.ViewHolder>{
-    private final List<NewsItem> mNewsItems;
+    private List<NewsItem> mNewsItems;
     private final Context mContext;
     private final LayoutInflater mInflater;
 
-    public AdapterRecyclerNews(Context context, List<NewsItem> news) {
-        mNewsItems = news;
+    public AdapterRecyclerNews(Context context) {
         mContext = context;
         mInflater = LayoutInflater.from(context);
+    }
+
+    public void setNewsItems(List<NewsItem> newsItems) {
+        mNewsItems = newsItems;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -40,37 +46,32 @@ public class AdapterRecyclerNews extends RecyclerView.Adapter<AdapterRecyclerNew
 
     @Override
     public int getItemCount() {
-        return mNewsItems.size();
+        return mNewsItems == null ? 0 : mNewsItems.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView title;
-        private final ImageView imageUrl;
-        private final TextView category;
-        private final TextView publishDate;
-        private final TextView previewText;
+        private final TextView mTitle;
+        private final ImageView mImageUrl;
+        private final TextView mCategory;
+        private final TextView mPublishDate;
+        private final TextView mPreviewText;
 
         public void bind(NewsItem newsItem) {
-            title.setText(newsItem.getTitle());
-            Glide.with(mContext).load(newsItem.getImageUrl()).into(imageUrl);
-            category.setText(newsItem.getCategory().getName());
-            publishDate.setText(newsItem.getPublishDate().toString());
-            previewText.setText(newsItem.getPreviewText());
+            mTitle.setText(newsItem.getTitle());
+            Glide.with(mContext).load(newsItem.getImageUrl()).into(mImageUrl);
+            mCategory.setText(newsItem.getCategory().getName());
+            mPublishDate.setText(DataUtils.formatDateTime(mContext,newsItem.getPublishDate()));
+            mPreviewText.setText(newsItem.getPreviewText());
         }
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    ActivityFullNews.start(mContext, mNewsItems.get(getAdapterPosition()));
-                }
-            });
-            title = itemView.findViewById(R.id.tvNewsTitle);
-            imageUrl = itemView.findViewById(R.id.ivNewsImage);
-            category = itemView.findViewById(R.id.tvNewsCategory);
-            publishDate = itemView.findViewById(R.id.tvNewsDate);
-            previewText = itemView.findViewById(R.id.tvNewsPreviewText);
+            itemView.setOnClickListener(view -> ActivityFullNews.start(mContext, mNewsItems.get(getAdapterPosition())));
+            mTitle = itemView.findViewById(R.id.news_title);
+            mImageUrl = itemView.findViewById(R.id.news_image);
+            mCategory = itemView.findViewById(R.id.news_category);
+            mPublishDate = itemView.findViewById(R.id.news_date);
+            mPreviewText = itemView.findViewById(R.id.news_previews_text);
         }
     }
 }

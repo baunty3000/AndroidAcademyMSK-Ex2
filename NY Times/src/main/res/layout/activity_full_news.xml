@@ -2,45 +2,40 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/main_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/newsAppBar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/full_news_appbar"
+        android:layout_height="@dimen/news_image_height"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/ctlNews"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:expandedTitleMarginEnd="64dp"
-            app:expandedTitleMarginStart="48dp"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
-
-            <ImageView
-                android:id="@+id/ivNewsImage"
+                android:id="@+id/details_category"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fitsSystemWindows="true"
-                android:scaleType="centerCrop"
-                app:layout_collapseMode="parallax"
-                app:srcCompat="@drawable/photo"
-                tools:ignore="ContentDescription" />
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleMarginEnd="64dp"
+                app:expandedTitleMarginStart="48dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                    android:id="@+id/details_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:layout_collapseMode="parallax"
+                    app:srcCompat="@drawable/photo"
+                    android:contentDescription="@string/news_image"/>
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/newsToolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+                    android:id="@+id/details_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
-
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -56,41 +51,37 @@
             <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/full_news_card_margin">
+                    android:layout_margin="@dimen/spacing_normal">
 
                 <LinearLayout
-                        style="@style/Widget.CardContent"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.CardContent">
 
                     <TextView
+                            android:id="@+id/details_title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            tools:text="@string/title"
+                            tools:text="@string/random_title"
                             android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                            android:id="@+id/tvNewsTitle"
                             android:fontFamily="sans-serif-smallcaps"
                             android:textStyle="bold"/>
 
                     <TextView
-                            tools:text="@tools:sample/date/ddmmyy"
+                            android:id="@+id/details_date"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/tvNewsDate"/>
+                            tools:text="@tools:sample/date/ddmmyy"/>
 
                     <TextView
+                            android:id="@+id/details_text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            tools:text="@string/article"
-                            android:id="@+id/tvNewsFullText"
-                            android:layout_marginTop="@dimen/full_news_text_margin_top"
-                            android:textSize="@dimen/body_text"/>
+                            tools:text="@string/random_article"
+                            android:layout_marginTop="@dimen/spacing_normal"
+                            android:textSize="@dimen/text_size_normal"/>
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
-
         </LinearLayout>
-
     </androidx.core.widget.NestedScrollView>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -23,7 +23,7 @@
         <activity android:name="ru.malakhov.nytimes.ActivityAbout"
                   android:windowSoftInputMode="adjustPan"/>
         <activity android:name="ru.malakhov.nytimes.ActivityFullNews"
-                  android:theme="@style/Theme.DesignDemo">
+                  android:theme="@style/Theme.Design">
         </activity>
     </application>
 

@@ -1,9 +1,16 @@
 package ru.malakhov.nytimes.data;
 
+import android.content.Context;
+import android.text.format.DateUtils;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
+
+import static android.text.format.DateUtils.DAY_IN_MILLIS;
+import static android.text.format.DateUtils.FORMAT_ABBREV_RELATIVE;
+import static android.text.format.DateUtils.HOUR_IN_MILLIS;
 
 public class DataUtils {
 
@@ -12,7 +19,6 @@ public class DataUtils {
     final Category criminal = new Category(2, "Criminal");
     final Category animals = new Category(3, "Animals");
     final Category music = new Category(4, "Music");
-
     List<NewsItem> news = new ArrayList<>();
     news.add(new NewsItem(
         "Tourist filmed sitting on 5m-long crocodile",
@@ -137,5 +143,15 @@ public class DataUtils {
 
   private static Date createDate(int year, int month, int date, int hrs, int min) {
     return new GregorianCalendar(year, month - 1, date, hrs, min).getTime();
+  }
+
+  public static CharSequence formatDateTime(Context context, Date dateTime) {
+    return DateUtils.getRelativeDateTimeString(
+            context,
+            dateTime.getTime(),
+            HOUR_IN_MILLIS,
+            5 * DAY_IN_MILLIS,
+            FORMAT_ABBREV_RELATIVE
+    );
   }
 }

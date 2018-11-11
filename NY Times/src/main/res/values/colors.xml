@@ -3,6 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#d70000</color>
+    <color name="colorWhite">#ffffff</color>
     <color name="line_color">#d70000</color>
+    <color name="btn_color">#d70000</color>
     <color name="date_text">#37000000</color>
 </resources>

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-30:12
-INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-30:12
-INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-30:12
-INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-30:12
+ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-31:12
 MERGED from [com.google.android.material:material:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/material-1.0.0-rc01.aar/cd89666155864affffe71b01238f3f49/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0-rc01.aar/7ae8630a94d0777a4295e7ca72f5b053/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.2.aar/5e342ba3f177eed999b4e7104cbe9be0/AndroidManifest.xml:2:1-11:12
@@ -38,22 +38,22 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/
 MERGED from [androidx.print:print:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/157d5e2161027825757a5c27d06897ca/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/059e1abe51720b2c424f8bac4a6be5d1/AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.8.0.aar/be7e213ed4b40cf2a3d88eaafe5162ae/AndroidManifest.xml:2:1-11:12
-INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-30:12
-INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-30:12
-INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-31:12
 	package
 		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:4:11-40
 		INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml
 		INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml
-		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-30:12
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-31:12
 		INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:3:11-57
 	android:versionCode
 		INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml
-		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-30:12
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-31:12
 		INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:11-69
@@ -62,7 +62,7 @@ ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Time
 	android:name
 		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:6:22-64
 application
-ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:8:5-28:19
+ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:8:5-29:19
 MERGED from [com.google.android.material:material:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/material-1.0.0-rc01.aar/cd89666155864affffe71b01238f3f49/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/material-1.0.0-rc01.aar/cd89666155864affffe71b01238f3f49/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.2.aar/5e342ba3f177eed999b4e7104cbe9be0/AndroidManifest.xml:9:5-20
@@ -91,32 +91,32 @@ MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/s.malakhov/.grad
 		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:9:13-40
 	android:theme
 		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:14:13-44
-activity#ru.malakhov.nytimes.ActivityRecyclerNews
-ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:17:5-22:20
-	android:name
-		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:17:15-70
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:18:13-21:29
-action#android.intent.action.MAIN
-ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:19:17-68
-	android:name
-		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:19:25-66
-category#android.intent.category.LAUNCHER
-ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:20:17-76
-	android:name
-		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:20:27-74
-activity#ru.malakhov.nytimes.ActivityAbout
-ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:23:9-24:60
-	android:windowSoftInputMode
-		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:24:19-58
-	android:name
-		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:23:19-67
-activity#ru.malakhov.nytimes.ActivityFullNews
-ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:25:9-27:20
+activity#ru.malakhov.nytimes.ui.ActivityRecyclerNews
+ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:17:9-23:20
 	android:theme
-		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:26:19-54
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:18:19-61
+	android:name
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:17:19-77
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:19:13-22:29
+action#android.intent.action.MAIN
+ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:20:17-68
+	android:name
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:20:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:21:17-76
+	android:name
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:21:27-74
+activity#ru.malakhov.nytimes.ui.ActivityAbout
+ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:25:9-26:60
+	android:windowSoftInputMode
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:26:19-58
 	android:name
 		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:25:19-70
+activity#ru.malakhov.nytimes.ui.ActivityFullNews
+ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:28:9-76
+	android:name
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:28:19-73
 uses-sdk
 INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml

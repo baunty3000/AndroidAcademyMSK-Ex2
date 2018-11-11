@@ -20,7 +20,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="ru.malakhov.nytimes.ActivityRecyclerNews" >
+        <activity
+            android:name="ru.malakhov.nytimes.ui.ActivityRecyclerNews"
+            android:theme="@style/AppThemeNoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,12 +30,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="ru.malakhov.nytimes.ActivityAbout"
+            android:name="ru.malakhov.nytimes.ui.ActivityAbout"
             android:windowSoftInputMode="adjustPan" />
-        <activity
-            android:name="ru.malakhov.nytimes.ActivityFullNews"
-            android:theme="@style/Theme.Design" >
-        </activity>
+        <activity android:name="ru.malakhov.nytimes.ui.ActivityFullNews" />
     </application>
 
 </manifest>

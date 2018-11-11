@@ -1,4 +1,4 @@
-#Mon Nov 05 00:22:49 MSK 2018
+#Sun Nov 11 21:45:16 MSK 2018
 base.0=/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/transforms/dexMerger/debug/8
 path.0=classes.dex
 renamed.0=classes.dex

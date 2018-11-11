@@ -1396,6 +1396,10 @@
         "source": "/Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0-rc01.aar/7ae8630a94d0777a4295e7ca72f5b053/res/layout/abc_screen_content_include.xml"
     },
     {
+        "merged": "/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/res/merged/debug/drawable-v24_no_image.png.flat",
+        "source": "/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/res/drawable-v24/no_image.png"
+    },
+    {
         "merged": "/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/res/merged/debug/drawable_abc_seekbar_thumb_material.xml.flat",
         "source": "/Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0-rc01.aar/7ae8630a94d0777a4295e7ca72f5b053/res/drawable/abc_seekbar_thumb_material.xml"
     },
@@ -1598,6 +1602,10 @@
     {
         "merged": "/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/res/merged/debug/anim_design_snackbar_out.xml.flat",
         "source": "/Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/material-1.0.0-rc01.aar/cd89666155864affffe71b01238f3f49/res/anim/design_snackbar_out.xml"
+    },
+    {
+        "merged": "/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/res/merged/debug/layout_simple_spinner_item.xml.flat",
+        "source": "/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/res/layout/simple_spinner_item.xml"
     },
     {
         "merged": "/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/res/merged/debug/drawable-ldrtl-xxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",

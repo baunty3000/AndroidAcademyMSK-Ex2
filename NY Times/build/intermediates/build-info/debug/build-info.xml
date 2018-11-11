@@ -3,10 +3,10 @@
     abi="x86"
     api-level="25"
     build-mode="COLD"
-    density="420dpi"
+    density="560dpi"
     format="10"
     plugin-version="3.2.1"
-    timestamp="1541413337080"
+    timestamp="1541961958289"
     token="-6392094250390546474"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -23,43 +23,46 @@
         name="verifier"
         duration="0" />
 
+    <artifact
+        location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/instant-run-apk/debug/NY Times-debug.apk"
+        type="SPLIT_MAIN" />
+
     <build
         build-mode="FULL"
-        ir-eligibility="FIELD_REMOVED"
-        timestamp="1541357268694"
-        verifier="COLD_SWAP_REQUESTED" >
+        timestamp="1541949772309"
+        verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_9.apk"
             type="SPLIT" />
         <artifact
             location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
         <artifact
             location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_0.apk"
             type="SPLIT" />
         <artifact
             location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/dep/dependencies.apk"
             type="SPLIT" />
         <artifact
             location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
         <artifact
             location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/instant-run-apk/debug/NY Times-debug.apk"
@@ -67,12 +70,9 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="R_CLASS_CHANGE"
-        timestamp="1541361318040"
+        ir-eligibility="FIELD_REMOVED"
+        timestamp="1541961914382"
         verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_1.apk"
-            type="SPLIT" />
         <artifact
             location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
@@ -80,13 +80,19 @@
             location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_2.apk"
-            type="SPLIT" />
-        <artifact
             location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_5.apk"
             type="SPLIT" />
         <artifact
+            location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            type="SPLIT" />
+        <artifact
             location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_8.apk"
             type="SPLIT" />
         <artifact
             location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_9.apk"
@@ -94,25 +100,11 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1541365359042"
+        timestamp="1541961958289"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/instant-run-apk/debug/NY Times-debug.apk"
             type="SPLIT_MAIN" />
     </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="SYNTHETIC_CONSTRUCTOR_CHANGE"
-        timestamp="1541366568916"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/split-apk/debug/slices/slice_8.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1541413337080"
-        verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>

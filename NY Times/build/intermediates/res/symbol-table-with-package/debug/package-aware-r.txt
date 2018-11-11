@@ -599,6 +599,7 @@ color bright_foreground_inverse_material_dark
 color bright_foreground_inverse_material_light
 color bright_foreground_material_dark
 color bright_foreground_material_light
+color btn_color
 color button_material_dark
 color button_material_light
 color cardview_dark_background
@@ -608,6 +609,7 @@ color cardview_shadow_start_color
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
+color colorWhite
 color date_text
 color design_bottom_navigation_shadow_color
 color design_default_color_primary
@@ -1026,6 +1028,7 @@ drawable instagram_icon
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
+drawable no_image
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -1080,6 +1083,7 @@ id beginning
 id bio
 id blocking
 id bottom
+id btn_try_again
 id buttonPanel
 id center
 id center_horizontal
@@ -1104,12 +1108,6 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
-id details_category
-id details_date
-id details_image
-id details_text
-id details_title
-id details_toolbar
 id dimensions
 id direct
 id disableHome
@@ -1125,6 +1123,7 @@ id fill_horizontal
 id fill_vertical
 id filled
 id fixed
+id fl_image
 id forever
 id ghost_view
 id glide_custom_view_target_tag
@@ -1177,10 +1176,11 @@ id parallax
 id parent
 id parentPanel
 id parent_matrix
+id pb_image
 id percent
 id photo
 id pin
-id progress_bar
+id pr_bar_recycler
 id progress_circular
 id progress_horizontal
 id radio
@@ -1221,6 +1221,7 @@ id snackbar_text
 id snap
 id snapMargins
 id spacer
+id spinner
 id split_action_bar
 id spread
 id spread_inside
@@ -1251,6 +1252,7 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id toolbar
 id top
 id topPanel
 id touch_outside
@@ -1259,6 +1261,8 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tv_network_error
+id tv_no_data
 id uniform
 id unlabeled
 id up
@@ -1266,6 +1270,7 @@ id useLogo
 id view_offset_helper
 id visible
 id vk_ico
+id web_browser
 id withText
 id wrap
 id wrap_content
@@ -1346,6 +1351,7 @@ layout notification_template_part_time
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout simple_spinner_item
 layout support_simple_spinner_dropdown_item
 menu menu
 mipmap ic_launcher
@@ -1402,6 +1408,7 @@ string app_name
 string appbar_scrolling_view_behavior
 string bio
 string bottom_sheet_behavior
+string btn_try_again
 string character_counter_content_description
 string character_counter_pattern
 string email_subject
@@ -1424,6 +1431,9 @@ string random_article
 string random_title
 string search_menu_title
 string status_bar_notification_info_overflow
+string tv_network_error
+string tv_no_data
+string tv_server_error
 string url_instagram
 string url_telegram
 string url_vk
@@ -1434,6 +1444,7 @@ style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
 style AppTheme
+style AppThemeNoActionBar
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog
@@ -1737,6 +1748,7 @@ style TextAppearance_Title
 style TextAppearance_Widget_AppCompat_ExpandedMenu_Item
 style TextAppearance_Widget_AppCompat_Toolbar_Subtitle
 style TextAppearance_Widget_AppCompat_Toolbar_Title
+style TextViewNews
 style Theme_AppCompat
 style Theme_AppCompat_CompactMenu
 style Theme_AppCompat_DayNight
@@ -1804,6 +1816,7 @@ style ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox
 style ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense
 style ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox
 style ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense
+style Toolbar
 style Widget_AppCompat_ActionBar
 style Widget_AppCompat_ActionBar_Solid
 style Widget_AppCompat_ActionBar_TabBar
@@ -1876,7 +1889,6 @@ style Widget_AppCompat_Spinner_Underlined
 style Widget_AppCompat_TextView_SpinnerItem
 style Widget_AppCompat_Toolbar
 style Widget_AppCompat_Toolbar_Button_Navigation
-style Widget_CardContent
 style Widget_Compat_NotificationActionContainer
 style Widget_Compat_NotificationActionText
 style Widget_Design_AppBarLayout

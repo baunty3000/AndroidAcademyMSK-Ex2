@@ -10,7 +10,11 @@
     <string name="about_job_title">Менеджер группы поддержки</string>
     <string name="about_study_description">Study image</string>
     <string name="about_study_title">Студент Android Academy</string>
+<<<<<<< HEAD
     <string name="bio">Работаю в компании Qiwi с декабря 2014го. Пару лет работал специалистом группы поддержки, затем перешел в отдел рассчетного центра, где освоил SQL.
+=======
+    <string name="bio">Сергей, работаю в компании Qiwi с декабря 2014го. Пару лет работал специалистом группы поддержки, затем перешел в отдел рассчетного центра, где освоил SQL.
+>>>>>>> master
         В данный момент работаю менеджером группы поддежки Совести, параллельно изучаю Java и Android</string>
     <string name="about_message_hint">Введите сообщение</string>
     <string name="about_message_send">Отправить сообщение</string>
@@ -23,6 +27,7 @@
     <string name="url_instagram">https://instagram.com/malakhov5</string>
     <string name="my_email">baunty3000@gmail.com</string>
     <string name="email_subject">Привет! Я из приложения !</string>
+<<<<<<< HEAD
 
     <string name="error_mail_client">Для отправки почты нужен почтовый клиент</string>
     <string name="error_not_id">id не обработан</string>
@@ -35,5 +40,10 @@
         again
     </string>
     <string name="tv_no_data">No data</string>
+=======
+    <string name="error_mail_client">Для отправки почты нужен почтовый клиент</string>
+    <string name="error_not_id">id не обработан</string>
+    <string name="error_not_browser">Установите браузер</string>
+>>>>>>> master
 
 </resources>

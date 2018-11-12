@@ -1,0 +1,35 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "/Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0-rc01.aar/7ae8630a94d0777a4295e7ca72f5b053/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "-1",
+                        "startColumns": "-1",
+                        "startOffsets": "-1"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "105",
+                        "endLines": "7",
+                        "endColumns": "13",
+                        "endOffsets": "377"
+                    }
+                },
+                {
+                    "source": "/Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/res/values-hdpi/dimens.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "49",
+                        "endOffsets": "100"
+                    }
+                }
+            ]
+        }
+    ]
+}

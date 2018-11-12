@@ -24,8 +24,12 @@
 
         <activity android:name="ru.malakhov.nytimes.ui.ActivityAbout"
                   android:windowSoftInputMode="adjustPan"/>
+<<<<<<< HEAD
 
-        <activity android:name="ru.malakhov.nytimes.ui.ActivityFullNews" />
+        <activity android:name="ru.malakhov.nytimes.ui.ActivityFullNews" /><![CDATA[
+=======
+        >>>>>>> master
+    ]]>
     </application>
 
 </manifest>

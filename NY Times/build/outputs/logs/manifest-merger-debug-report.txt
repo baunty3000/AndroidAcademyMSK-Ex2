@@ -1,0 +1,201 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-30:12
+MERGED from [com.google.android.material:material:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/material-1.0.0-rc01.aar/cd89666155864affffe71b01238f3f49/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0-rc01.aar/7ae8630a94d0777a4295e7ca72f5b053/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.2.aar/5e342ba3f177eed999b4e7104cbe9be0/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.8.0.aar/addcb865d5625b6a881ea2794c3cd01f/AndroidManifest.xml:2:1-12:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/recyclerview-1.0.0.aar/0fbe7f14f6f4fb6142d3aca80a12c2f7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/cardview-1.0.0.aar/9cb5d81ef8062474cdf6721108543071/AndroidManifest.xml:17:1-22:12
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/rxandroid-2.1.0.aar/3a7be9d15f0c131ac7d1f68b1906836b/AndroidManifest.xml:15:1-20:12
+MERGED from [androidx.fragment:fragment:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0-rc01.aar/416fa9f84c6b2a956f5daac4c0603c7d/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0-rc01.aar/9019a456974a200ae72022fb746f468a/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.0.0-rc01.aar/7b6f7c86f569cce52e5ff19c493e1b21/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/transition-1.0.0-rc01.aar/ccc699fe8166426e02b141a8fce4b957/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/671879e3c910e4fe8ac6591f0abf4197/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/43f0c0406c3b743802b040aef237efa8/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/b3649d475a3f7e48d316a2491bfc3da8/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/6873be694e64e2858bbb997e02a9fede/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/8cde3546b9d4f7176e9206078dcb1984/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/cf2aef23f188d8ccd4a15c008384f50f/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/97eeb4f015439fc21a373f1e2260136a/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/5615c7e85052c1b25cb29d04dc3e32d6/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/3282d1541cb1ebc2fc857f909d47fd8d/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/84cb6cac4d0fea502142ab9dc5213851/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/079cdabcefd7b0b6e6771a461fc5f824/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/c30f3e3e246b94f6ef067956c5baf1a7/AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/8e248c5da9c09a2d326aa4adef670d96/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/9f3ad88472f19b77ca1e6d854883dd4a/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/ab1bfae1448deae2f4ac95453b0ce675/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/cebf48ae65af2727a3c32e156d28ca82/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/ac1c6ca64ee93bce501499da0e7df650/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/be2f4de22acc2eac71bbe8395d6c8534/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/a7d0c583a020e80b1041dda33817a4ff/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/ecc357b16a534bcc06166933ba9b4026/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/157d5e2161027825757a5c27d06897ca/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/059e1abe51720b2c424f8bac4a6be5d1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.8.0.aar/be7e213ed4b40cf2a3d88eaafe5162ae/AndroidManifest.xml:2:1-11:12
+INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-30:12
+	package
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:4:11-40
+		INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml
+		INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-30:12
+		INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:3:11-57
+	android:versionCode
+		INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:1-30:12
+		INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:6:5-66
+	android:name
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:6:22-64
+application
+ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:8:5-28:19
+MERGED from [com.google.android.material:material:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/material-1.0.0-rc01.aar/cd89666155864affffe71b01238f3f49/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/material-1.0.0-rc01.aar/cd89666155864affffe71b01238f3f49/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.2.aar/5e342ba3f177eed999b4e7104cbe9be0/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.2.aar/5e342ba3f177eed999b4e7104cbe9be0/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.8.0.aar/addcb865d5625b6a881ea2794c3cd01f/AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.8.0.aar/addcb865d5625b6a881ea2794c3cd01f/AndroidManifest.xml:10:5-20
+MERGED from [androidx.core:core:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/079cdabcefd7b0b6e6771a461fc5f824/AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/079cdabcefd7b0b6e6771a461fc5f824/AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/c30f3e3e246b94f6ef067956c5baf1a7/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/c30f3e3e246b94f6ef067956c5baf1a7/AndroidManifest.xml:22:5-23:19
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.8.0.aar/be7e213ed4b40cf2a3d88eaafe5162ae/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.8.0.aar/be7e213ed4b40cf2a3d88eaafe5162ae/AndroidManifest.xml:9:5-20
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/079cdabcefd7b0b6e6771a461fc5f824/AndroidManifest.xml:22:18-86
+	android:supportsRtl
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:13:13-39
+	android:label
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:11:13-45
+	tools:ignore
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:15:13-52
+	android:roundIcon
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:12:13-58
+	android:icon
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:10:13-47
+	android:allowBackup
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:9:13-40
+	android:theme
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:14:13-44
+activity#ru.malakhov.nytimes.ActivityRecyclerNews
+ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:17:5-22:20
+	android:name
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:17:15-70
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:18:13-21:29
+action#android.intent.action.MAIN
+ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:19:17-68
+	android:name
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:19:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:20:17-76
+	android:name
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:20:27-74
+activity#ru.malakhov.nytimes.ActivityAbout
+ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:23:9-24:60
+	android:windowSoftInputMode
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:24:19-58
+	android:name
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:23:19-67
+activity#ru.malakhov.nytimes.ActivityFullNews
+ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:25:9-27:20
+	android:theme
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:26:19-54
+	android:name
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml:25:19-70
+uses-sdk
+INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml
+INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml
+MERGED from [com.google.android.material:material:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/material-1.0.0-rc01.aar/cd89666155864affffe71b01238f3f49/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/material-1.0.0-rc01.aar/cd89666155864affffe71b01238f3f49/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0-rc01.aar/7ae8630a94d0777a4295e7ca72f5b053/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0-rc01.aar/7ae8630a94d0777a4295e7ca72f5b053/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.2.aar/5e342ba3f177eed999b4e7104cbe9be0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.2.aar/5e342ba3f177eed999b4e7104cbe9be0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.8.0.aar/addcb865d5625b6a881ea2794c3cd01f/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.8.0.aar/addcb865d5625b6a881ea2794c3cd01f/AndroidManifest.xml:6:5-8:41
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/recyclerview-1.0.0.aar/0fbe7f14f6f4fb6142d3aca80a12c2f7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/recyclerview-1.0.0.aar/0fbe7f14f6f4fb6142d3aca80a12c2f7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/cardview-1.0.0.aar/9cb5d81ef8062474cdf6721108543071/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/cardview-1.0.0.aar/9cb5d81ef8062474cdf6721108543071/AndroidManifest.xml:20:5-44
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/rxandroid-2.1.0.aar/3a7be9d15f0c131ac7d1f68b1906836b/AndroidManifest.xml:18:5-43
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/rxandroid-2.1.0.aar/3a7be9d15f0c131ac7d1f68b1906836b/AndroidManifest.xml:18:5-43
+MERGED from [androidx.fragment:fragment:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0-rc01.aar/416fa9f84c6b2a956f5daac4c0603c7d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0-rc01.aar/416fa9f84c6b2a956f5daac4c0603c7d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0-rc01.aar/9019a456974a200ae72022fb746f468a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0-rc01.aar/9019a456974a200ae72022fb746f468a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.0.0-rc01.aar/7b6f7c86f569cce52e5ff19c493e1b21/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.0.0-rc01.aar/7b6f7c86f569cce52e5ff19c493e1b21/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/transition-1.0.0-rc01.aar/ccc699fe8166426e02b141a8fce4b957/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0-rc01] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/transition-1.0.0-rc01.aar/ccc699fe8166426e02b141a8fce4b957/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/671879e3c910e4fe8ac6591f0abf4197/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/671879e3c910e4fe8ac6591f0abf4197/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/43f0c0406c3b743802b040aef237efa8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/43f0c0406c3b743802b040aef237efa8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/b3649d475a3f7e48d316a2491bfc3da8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/b3649d475a3f7e48d316a2491bfc3da8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/6873be694e64e2858bbb997e02a9fede/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/6873be694e64e2858bbb997e02a9fede/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/8cde3546b9d4f7176e9206078dcb1984/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/8cde3546b9d4f7176e9206078dcb1984/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/cf2aef23f188d8ccd4a15c008384f50f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/cf2aef23f188d8ccd4a15c008384f50f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/97eeb4f015439fc21a373f1e2260136a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/97eeb4f015439fc21a373f1e2260136a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/5615c7e85052c1b25cb29d04dc3e32d6/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/5615c7e85052c1b25cb29d04dc3e32d6/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/3282d1541cb1ebc2fc857f909d47fd8d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/3282d1541cb1ebc2fc857f909d47fd8d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/84cb6cac4d0fea502142ab9dc5213851/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/84cb6cac4d0fea502142ab9dc5213851/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/079cdabcefd7b0b6e6771a461fc5f824/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/079cdabcefd7b0b6e6771a461fc5f824/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/c30f3e3e246b94f6ef067956c5baf1a7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/c30f3e3e246b94f6ef067956c5baf1a7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/8e248c5da9c09a2d326aa4adef670d96/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/8e248c5da9c09a2d326aa4adef670d96/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/9f3ad88472f19b77ca1e6d854883dd4a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/9f3ad88472f19b77ca1e6d854883dd4a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/ab1bfae1448deae2f4ac95453b0ce675/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/ab1bfae1448deae2f4ac95453b0ce675/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/cebf48ae65af2727a3c32e156d28ca82/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/cebf48ae65af2727a3c32e156d28ca82/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/ac1c6ca64ee93bce501499da0e7df650/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/ac1c6ca64ee93bce501499da0e7df650/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/be2f4de22acc2eac71bbe8395d6c8534/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/be2f4de22acc2eac71bbe8395d6c8534/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/a7d0c583a020e80b1041dda33817a4ff/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/a7d0c583a020e80b1041dda33817a4ff/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/ecc357b16a534bcc06166933ba9b4026/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/ecc357b16a534bcc06166933ba9b4026/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/157d5e2161027825757a5c27d06897ca/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/157d5e2161027825757a5c27d06897ca/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/059e1abe51720b2c424f8bac4a6be5d1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/059e1abe51720b2c424f8bac4a6be5d1/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.8.0.aar/be7e213ed4b40cf2a3d88eaafe5162ae/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/s.malakhov/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.8.0.aar/be7e213ed4b40cf2a3d88eaafe5162ae/AndroidManifest.xml:5:5-7:41
+INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml
+INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml
+		INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml
+		ADDED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml
+		INJECTED from /Users/s.malakhov/Documents/Android/AndroidAcademyMSK/NYTimes/NY Times/src/main/AndroidManifest.xml

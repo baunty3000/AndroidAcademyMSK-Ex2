@@ -126,11 +126,7 @@
                     android:padding="@dimen/spacing_micro"
                     android:layout_alignParentEnd="true"
                     android:background="@null"
-<<<<<<< HEAD
                     android:textColor="@color/btn_color"
-=======
-                    android:textColor="@color/colorAccent"
->>>>>>> master
                     android:gravity="center_vertical"
                     android:textSize="@dimen/text_size_normal"
                     android:text="@string/about_message_send"/>

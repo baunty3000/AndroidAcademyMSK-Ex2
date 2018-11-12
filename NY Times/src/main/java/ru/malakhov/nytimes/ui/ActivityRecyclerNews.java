@@ -192,7 +192,7 @@ public class ActivityRecyclerNews extends AppCompatActivity {
                 mTvError.setText(getText(R.string.tv_server_error));
                 mTvError.setVisibility(View.VISIBLE);
             break;
-            default: throw new IllegalArgumentException(getString(R.string.error_not_id)+": "+state);
+            default: throw new IllegalArgumentException(getString(R.string.error_no_id)+": "+state);
         }
     }
 
@@ -208,7 +208,7 @@ public class ActivityRecyclerNews extends AppCompatActivity {
             case R.id.menu_about:
                 startActivity(new Intent(this, ActivityAbout.class));
                 break;
-            default: throw new IllegalArgumentException(getString(R.string.error_not_id)+": "+item.getItemId());
+            default: throw new IllegalArgumentException(getString(R.string.error_no_id)+": "+item.getItemId());
         }
         return super.onOptionsItemSelected(item);
     }

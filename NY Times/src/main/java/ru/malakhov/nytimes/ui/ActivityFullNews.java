@@ -64,7 +64,7 @@ public class ActivityFullNews extends AppCompatActivity {
             case android.R.id.home:
                 finish();
                 break;
-            default: throw new IllegalArgumentException(getString(R.string.error_not_id)+": "+item.getItemId());
+            default: throw new IllegalArgumentException(getString(R.string.error_no_id)+": "+item.getItemId());
         }
         return super.onOptionsItemSelected(item);
     }

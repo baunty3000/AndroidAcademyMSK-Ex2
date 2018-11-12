@@ -8,7 +8,6 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-<<<<<<< HEAD
     <style name="AppThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -21,12 +20,6 @@
         <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
 
         <item name="android:background">@color/colorPrimary</item>
-=======
-    <style name="Theme.Design" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <item name="colorPrimary">#673AB7</item>
-        <item name="colorPrimaryDark">#512DA8</item>
-        <item name="colorAccent">#FF4081</item>
->>>>>>> master
     </style>
 
     <style name="TextAppearance.Category" parent="@style/TextAppearance.AppCompat.Body1">
@@ -35,25 +28,9 @@
         <item name="android:maxLines">1</item>
     </style>
 
-<<<<<<< HEAD
-=======
-    <style name="TextAppearance.Category" parent="@style/TextAppearance.AppCompat.Body1">
-        <item name="android:fontFamily">sans-serif-condensed</item>
-        <item name="android:textAllCaps">true</item>
-        <item name="android:maxLines">1</item>
-    </style>
-
->>>>>>> master
     <style name="TextAppearance.Title" parent="@style/TextAppearance.AppCompat.Subhead">
         <item name="android:textStyle">bold</item>
         <item name="android:fontFamily">sans-serif-smallcaps</item>
     </style>
 
-<<<<<<< HEAD
-    <style name="TextViewNews">
-        <item name="android:maxLines">1</item>
-    </style>
-
-=======
->>>>>>> master
 </resources>

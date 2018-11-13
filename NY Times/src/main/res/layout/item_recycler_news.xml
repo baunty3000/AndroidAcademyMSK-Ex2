@@ -28,7 +28,7 @@
                 android:maxLines="2"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/news_category"
-                android:layout_toStartOf="@+id/news_image"
+                android:layout_toStartOf="@+id/fl_image"
                 android:textAppearance="@style/TextAppearance.Title"
                 tools:text="@string/random_title"/>
 
@@ -39,7 +39,7 @@
                 android:maxLines="4"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/news_title"
-                android:layout_toStartOf="@+id/news_image"
+                android:layout_toStartOf="@+id/fl_image"
                 android:layout_marginTop="@dimen/spacing_micro"
                 tools:text="@string/random_article"/>
 
@@ -49,22 +49,37 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/news_previews_text"
                 android:layout_alignParentStart="true"
-                android:layout_toStartOf="@+id/news_image"
+                android:layout_toStartOf="@+id/fl_image"
                 android:layout_marginTop="@dimen/spacing_micro"
                 android:maxLines="1"
                 android:textColor="@color/date_text"
                 tools:text="@tools:sample/date/ddmmyy"/>
 
-        <ImageView
-                android:id="@+id/news_image"
-                android:layout_width="@dimen/item_image_size"
-                android:layout_height="@dimen/item_image_size"
-                tools:srcCompat="@tools:sample/avatars"
+        <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fl_image"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="@dimen/spacing_small"
-                android:scaleType="centerCrop"
                 android:layout_below="@+id/news_category"
-                android:contentDescription="@string/news_image"/>
+                android:layout_marginStart="@dimen/spacing_small"
+                android:layout_marginTop="@dimen/spacing_micro">
 
+            <ImageView
+                    android:id="@+id/news_image"
+                    android:layout_width="@dimen/item_image_size"
+                    android:layout_height="@dimen/item_image_size"
+                    tools:srcCompat="@tools:sample/avatars"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/news_image">
+            </ImageView>
+
+            <ProgressBar
+                    android:id="@+id/pb_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_gravity="center"
+                    android:visibility="gone"/>
+        </FrameLayout>
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

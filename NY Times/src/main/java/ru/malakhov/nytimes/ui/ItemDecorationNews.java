@@ -1,4 +1,5 @@
-package ru.malakhov.nytimes;
+
+package ru.malakhov.nytimes.ui;
 
 import android.content.res.Configuration;
 import android.graphics.Rect;
@@ -30,7 +31,7 @@ public class ItemDecorationNews extends RecyclerView.ItemDecoration {
             @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
         super.getItemOffsets(outRect, view, parent, state);
         int position = parent.getChildAdapterPosition(view);
-
+        // задаем одинаковое расстояние между элементаци
         if (mOrientation == Configuration.ORIENTATION_PORTRAIT) {
             if (position == 0){
                 outRect.top = mSpacing;

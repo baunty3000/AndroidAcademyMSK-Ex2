@@ -5,18 +5,62 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar">
+
+        <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:gravity="end"/>
+    </androidx.appcompat.widget.Toolbar>
+
     <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_news"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/item_recycler_news"
-            android:id="@+id/rv_news"/>
+            android:layout_below="@+id/toolbar"
+            tools:listitem="@layout/item_recycler_news"/>
 
-    <ProgressBar
-            android:id="@+id/progress_bar"
-            style="?android:attr/progressBarStyle"
+    <Button
+            android:id="@+id/btn_try_again"
+            android:text="@string/btn_try_again"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:visibility="gone"/>
+
+    <TextView
+            android:id="@+id/tv_network_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_try_again"
+            android:layout_margin="@dimen/spacing_normal"
+            android:layout_centerHorizontal="true"
+            android:text="@string/tv_network_error"
+            android:visibility="gone"/>
+
+    <TextView
+            android:id="@+id/tv_no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_try_again"
+            android:layout_margin="@dimen/spacing_normal"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/tv_no_data"
+            android:visibility="gone"/>
+
+    <ProgressBar
+            android:id="@+id/pr_bar_recycler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyle"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+    />
+
 </RelativeLayout>

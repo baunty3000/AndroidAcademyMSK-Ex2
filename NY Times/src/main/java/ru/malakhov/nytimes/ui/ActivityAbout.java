@@ -1,4 +1,5 @@
-package ru.malakhov.nytimes;
+
+package ru.malakhov.nytimes.ui;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import ru.malakhov.nytimes.R;
 
 public class ActivityAbout extends AppCompatActivity {
 
@@ -39,7 +41,7 @@ public class ActivityAbout extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         } else {
-            Toast.makeText(this, getString(R.string.error_not_browser), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.error_no_browser), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -75,7 +77,7 @@ public class ActivityAbout extends AppCompatActivity {
                 finish();
                 break;
             default:
-                throw new IllegalArgumentException(getString(R.string.error_not_id) + item.getItemId());
+                throw new IllegalArgumentException(getString(R.string.error_no_id)+": "+item.getItemId());
         }
         return super.onOptionsItemSelected(item);
     }

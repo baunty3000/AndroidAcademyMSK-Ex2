@@ -126,7 +126,7 @@
                     android:padding="@dimen/spacing_micro"
                     android:layout_alignParentEnd="true"
                     android:background="@null"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/btn_color"
                     android:gravity="center_vertical"
                     android:textSize="@dimen/text_size_normal"
                     android:text="@string/about_message_send"/>

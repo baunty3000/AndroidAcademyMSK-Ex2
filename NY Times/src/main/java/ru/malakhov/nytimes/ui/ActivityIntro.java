@@ -69,9 +69,6 @@ public class ActivityIntro extends AppCompatActivity {
     private boolean needToShowIntro() {
         int loadCounter = loadPrefCounter();
         mCounter = loadCounter == 0 ? mCounter : loadCounter;
-        if (mCounter % 2 == 0) {
-            return true;
-        }
-        return false;
+        return mCounter % 2 == 0;
     }
 }

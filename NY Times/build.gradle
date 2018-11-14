@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "ru.malakhov.exercise2"
+        applicationId "ru.malakhov.nytimes"
         minSdkVersion 23
         targetSdkVersion 28
         versionCode 1

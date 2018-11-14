@@ -35,5 +35,8 @@
         again
     </string>
     <string name="tv_no_data">No data</string>
+    <string name="text_intro">Welcome!</string>
+
+    <string name="image_intro">Image Intro</string>
 
 </resources>

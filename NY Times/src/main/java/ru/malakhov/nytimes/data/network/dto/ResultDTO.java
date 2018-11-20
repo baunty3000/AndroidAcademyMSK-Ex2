@@ -63,6 +63,4 @@ public class ResultDTO {
                 FORMAT_ABBREV_RELATIVE
         );
     }
-
-
 }

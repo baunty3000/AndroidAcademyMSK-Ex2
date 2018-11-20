@@ -23,8 +23,11 @@
 
         <activity android:name="ru.malakhov.nytimes.ui.ActivityAbout"
                   android:windowSoftInputMode="adjustPan"/>
-        <activity android:name="ru.malakhov.nytimes.ui.ActivityFullNews" />
+        <activity android:name="ru.malakhov.nytimes.ui.ActivityFullNews"
+                  android:theme="@style/AppThemeNoActionBar"/>
         <activity android:name="ru.malakhov.nytimes.ui.ActivityRecyclerNews"
+                  android:theme="@style/AppThemeNoActionBar"/>
+        <activity android:name="ru.malakhov.nytimes.ui.ActivityEditorNews"
                   android:theme="@style/AppThemeNoActionBar"/>
     </application>
 

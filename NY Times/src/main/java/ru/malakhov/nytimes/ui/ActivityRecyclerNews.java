@@ -1,6 +1,7 @@
 
 package ru.malakhov.nytimes.ui;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
@@ -30,13 +32,13 @@ import io.reactivex.schedulers.Schedulers;
 import ru.malakhov.nytimes.R;
 import ru.malakhov.nytimes.data.network.RestAPI;
 import ru.malakhov.nytimes.data.network.dto.DataNewsDTO;
-import ru.malakhov.nytimes.data.network.dto.ResultDTO;
+import ru.malakhov.nytimes.data.room.NewsEntity;
 import ru.malakhov.nytimes.ui.adapter.AdapterRecyclerNews;
 
 public class ActivityRecyclerNews extends AppCompatActivity {
 
     private static final int LAYOUT = R.layout.activity_recycler_news;
-    private final int mSpinnerDefaultItem = 0;
+    private final static int SPINNER_DEFAULT_ITEM = 0;
     private TextView mTvError;
     private TextView mTvNoData;
     private Button mBtnError;
@@ -44,17 +46,16 @@ public class ActivityRecyclerNews extends AppCompatActivity {
     private ProgressBar mProgressBar;
     private Disposable mDisposableNews;
     private Spinner mSpinner;
+    private Context mContext;
 
-    private static List<ResultDTO> mNewsItems;
-    CompositeDisposable mCompositeDisposable;
-    AdapterRecyclerNews mAdapter;
+    private static List<NewsEntity> mNewsItems = new ArrayList<>();
+    private CompositeDisposable mCompositeDisposable = new CompositeDisposable();
+    private AdapterRecyclerNews mAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(LAYOUT);
-        mNewsItems = new ArrayList<>();
-        mCompositeDisposable = new CompositeDisposable();
         init();
         setItemOrientation(mRecycler); // отображение элементов в разных ориентациях
         mAdapter = new AdapterRecyclerNews(this);
@@ -62,9 +63,15 @@ public class ActivityRecyclerNews extends AppCompatActivity {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        loadItems(getNewsCategory());
+    }
+
+    @Override
     protected void onStop() {
         super.onStop();
-        mCompositeDisposable.dispose();
+        mCompositeDisposable.clear();
     }
 
     private void setItemOrientation(RecyclerView rvNews) {
@@ -89,8 +96,10 @@ public class ActivityRecyclerNews extends AppCompatActivity {
     }
 
     private void init() {
+        mContext = this;
         findViews();
         setToolbar();
+        setFab();
         mBtnError.setOnClickListener(v->loadItems(RestAPI.mSections[mSpinner.getSelectedItemPosition()]));
     }
 
@@ -103,7 +112,7 @@ public class ActivityRecyclerNews extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.simple_spinner_item, RestAPI.mSections);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mSpinner.setAdapter(adapter);
-        mSpinner.setSelection(mSpinnerDefaultItem);
+        mSpinner.setSelection(SPINNER_DEFAULT_ITEM);
         mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -116,25 +125,64 @@ public class ActivityRecyclerNews extends AppCompatActivity {
         });
     }
 
+    private void setFab() {
+        findViewById(R.id.fab).setOnClickListener(v -> {
+            mNewsItems.clear();
+            loadFromApi(getNewsCategory());
+        });
+    }
+
     private void loadItems(String section) {
+        if (mNewsItems != null) mNewsItems.clear();
         showState(State.Loading);
+        loadFromDb(section);
+    }
+
+    private void loadFromDb(String section){
+         Disposable loadFromDb = Single.fromCallable(() -> ConverterNews.loadNewsFromDb(mContext, section))
+                 .subscribeOn(Schedulers.io())
+                 .observeOn(AndroidSchedulers.mainThread())
+                 .subscribe(this::checkResponseDb, this::handleError);
+        mCompositeDisposable.add(loadFromDb);
+    }
+
+    private void checkResponseDb(List<NewsEntity> newsEntityList) {
+        if (newsEntityList.size()==0){
+            loadFromApi(getNewsCategory());
+        } else {
+            mNewsItems.addAll(newsEntityList);
+            mAdapter.setNewsItems(mNewsItems);
+            showState(State.HasData);
+        }
+    }
+
+    private void loadFromApi(String section){
         mDisposableNews = RestAPI.getInstance()
                 .getDataNewsEndpoint()
                 .getNews(section)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(this::checkResponse, this::handleError);
+                .subscribe(this::checkResponseApi, this::handleError);
         mCompositeDisposable.add(mDisposableNews);
     }
 
-    private void checkResponse(DataNewsDTO dataNewsDTO) {
-        if (mNewsItems != null) mNewsItems.clear();
+    private void checkResponseApi(DataNewsDTO dataNewsDTO) {
         if (dataNewsDTO.getResults().size()==0){
             showState(State.HasNoData);
         }
         else {
-            mNewsItems.addAll(dataNewsDTO.getResults());
-            mAdapter.setNewsItems(mNewsItems);
+            Disposable saveNewsToDb = Single.fromCallable(dataNewsDTO::getResults)
+                    .subscribeOn(Schedulers.io())
+                    .map(listResultDto -> {
+                        ConverterNews.saveAllNewsToDb(mContext, ConverterNews.dtoToDao(listResultDto, getNewsCategory()), getNewsCategory());
+                        return ConverterNews.loadNewsFromDb(mContext, getNewsCategory());
+                    })
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(newsEntityList -> {
+                        mNewsItems.addAll(newsEntityList);
+                        mAdapter.setNewsItems(mNewsItems);
+                    });
+            mCompositeDisposable.add(saveNewsToDb);
             showState(State.HasData);
         }
     }
@@ -196,9 +244,13 @@ public class ActivityRecyclerNews extends AppCompatActivity {
         }
     }
 
+    private String getNewsCategory(){
+        return RestAPI.mSections[mSpinner.getSelectedItemPosition()];
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
+        getMenuInflater().inflate(R.menu.menu_about, menu);
         return true;
     }
 

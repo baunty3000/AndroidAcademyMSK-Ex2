@@ -13,9 +13,10 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import ru.malakhov.nytimes.R;
 import ru.malakhov.nytimes.data.network.dto.ResultDTO;
+import ru.malakhov.nytimes.data.room.NewsEntity;
 
 public class AdapterRecyclerNews extends RecyclerView.Adapter<ViewHolderNews>{
-    private List<ResultDTO> mNewsItems;
+    private List<NewsEntity> mNewsItems;
     private final Activity mActivity;
     private final LayoutInflater mInflater;
 
@@ -24,7 +25,7 @@ public class AdapterRecyclerNews extends RecyclerView.Adapter<ViewHolderNews>{
         mInflater = LayoutInflater.from(activity);
     }
 
-    public void setNewsItems(List<ResultDTO> newsItems) {
+    public void setNewsItems(List<NewsEntity> newsItems) {
         mNewsItems = newsItems;
         notifyDataSetChanged();
     }

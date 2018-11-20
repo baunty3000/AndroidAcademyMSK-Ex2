@@ -20,13 +20,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 import ru.malakhov.nytimes.R;
-import ru.malakhov.nytimes.data.network.dto.MultimediumGTO;
-import ru.malakhov.nytimes.data.network.dto.ResultDTO;
+import ru.malakhov.nytimes.ui.ConverterNews;
+import ru.malakhov.nytimes.data.room.NewsEntity;
 import ru.malakhov.nytimes.ui.ActivityFullNews;
 
 public class ViewHolderNews extends RecyclerView.ViewHolder {
-
-    private final int mImageSize = 1;
 
     private TextView mTitle;
     private ImageView mImageUrl;
@@ -36,16 +34,16 @@ public class ViewHolderNews extends RecyclerView.ViewHolder {
     private ProgressBar mProgressBar;
     private Activity mActivity;
 
-    public ViewHolderNews(@NonNull View itemView, Activity activity, List<ResultDTO> newsItems) {
+    public ViewHolderNews(@NonNull View itemView, Activity activity, List<NewsEntity> newsItems) {
         super(itemView);
         findViews(itemView);
         mActivity = activity;
-        itemView.setOnClickListener(view -> ActivityFullNews.start(mActivity, newsItems.get(getAdapterPosition()))); // тут корректно?
+        itemView.setOnClickListener(view -> ActivityFullNews.start(mActivity, newsItems.get(getAdapterPosition()).getId())); // тут корректно?
     }
 
-    public void bind(ResultDTO newsItem) {
+    public void bind(NewsEntity newsItem) {
         mTitle.setText(newsItem.getTitle());
-        setImage(newsItem.getMultimedia());
+        setImage(newsItem.getImageUrl());
         setCategory(newsItem.getSubsection());
         setPublishDate(newsItem.getPublishedDate());
         mPreviewText.setText(newsItem.getAbstract());
@@ -60,8 +58,8 @@ public class ViewHolderNews extends RecyclerView.ViewHolder {
         mProgressBar = itemView.findViewById(R.id.pb_image);
     }
 
-    private void setImage(List<MultimediumGTO> url) {
-        if (url.size() == 0){ // если нет картинок, ставим дефолтную картинку
+    private void setImage(String url) {
+        if (url.equals(ConverterNews.KEY_NO_IMAGE)){ // если нет картинок, ставим дефолтную картинку
             Glide.with(mActivity)
                     .load(R.drawable.no_image)
                     .into(mImageUrl);
@@ -69,7 +67,7 @@ public class ViewHolderNews extends RecyclerView.ViewHolder {
         }
         mProgressBar.setVisibility(View.VISIBLE);
         Glide.with(mActivity)
-                .load(url.get(mImageSize).getUrl())
+                .load(url)
                 .listener(new RequestListener<Drawable>() {
                     @Override
                     public boolean onLoadFailed(@Nullable GlideException e, Object model,

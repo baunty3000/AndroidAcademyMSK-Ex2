@@ -24,11 +24,11 @@
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
                     app:layout_collapseMode="parallax"
-                    app:srcCompat="@drawable/photo"
+                    tools:srcCompat="@drawable/photo"
                     android:contentDescription="@string/news_image"/>
 
             <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/details_toolbar"
+                    android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     app:layout_collapseMode="pin"

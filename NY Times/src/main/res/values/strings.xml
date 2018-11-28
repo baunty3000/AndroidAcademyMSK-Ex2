@@ -45,5 +45,6 @@
     <string name="hint_editor_category">Категория статьи...</string>
     <string name="hint_editor_title">Заголовок статьи...</string>
     <string name="hint_editor_text">Текст статьи...</string>
+    <string name="spinner">ActionBar Spinner</string>
 
 </resources>

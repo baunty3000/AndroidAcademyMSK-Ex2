@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="horizontal"
+                  android:focusableInTouchMode="true"
+                  android:descendantFocusability="beforeDescendants">
+
+        <ImageView
+                android:id="@+id/photo"
+                android:layout_width="@dimen/spacing_weight"
+                android:layout_height="match_parent"
+                android:layout_weight="0.75"
+                app:srcCompat="@drawable/photo"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/about_photo"/>
+
+        <ScrollView
+                android:layout_width="@dimen/spacing_weight"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+            <RelativeLayout android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                <ImageView
+                        android:id="@+id/job_image"
+                        android:layout_width="@dimen/icon_size_normal"
+                        android:layout_height="@dimen/icon_size_normal"
+                        app:srcCompat="@drawable/sovest_icon"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="@dimen/about_side_padding"
+                        android:layout_marginTop="@dimen/spacing_normal"
+                        android:contentDescription="@string/about_job_description"/>
+
+                <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_alignTop="@+id/job_image"
+                        android:layout_alignBottom="@+id/job_image"
+                        android:layout_marginStart="@dimen/spacing_small"
+                        android:layout_toEndOf="@+id/job_image"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/text_size_normal"
+                        android:text="@string/about_job_title"/>
+
+                <ImageView
+                        android:id="@+id/study_image"
+                        android:layout_width="@dimen/icon_size_normal"
+                        android:layout_height="@dimen/icon_size_normal"
+                        android:src="@android:drawable/sym_def_app_icon"
+                        android:layout_below="@+id/job_image"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="@dimen/about_side_padding"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:contentDescription="@string/about_study_description"/>
+
+                <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_alignTop="@+id/study_image"
+                        android:layout_alignBottom="@+id/study_image"
+                        android:layout_marginStart="@dimen/spacing_small"
+                        android:layout_toEndOf="@+id/study_image"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/text_size_normal"
+                        android:text="@string/about_study_title"/>
+
+                <View
+                        android:id="@+id/separator_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/separator_thickness"
+                        android:layout_below="@+id/study_image"
+                        android:layout_marginStart="@dimen/about_side_padding"
+                        android:layout_marginEnd="@dimen/about_side_padding"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:background="@color/line_color"/>
+
+                <TextView
+                        android:id="@+id/bio"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_below="@id/separator_1"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:layout_marginEnd="@dimen/about_side_padding"
+                        android:layout_marginStart="@dimen/about_side_padding"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/text_size_normal"
+                        android:text="@string/bio"/>
+
+                <View
+                        android:id="@+id/separator_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/separator_thickness"
+                        android:layout_below="@+id/bio"
+                        android:layout_marginStart="@dimen/about_side_padding"
+                        android:layout_marginEnd="@dimen/about_side_padding"
+                        android:layout_marginTop="@dimen/spacing_normal"
+                        android:background="@color/line_color"/>
+
+                <EditText
+                        android:id="@+id/message_edit"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_below="@id/separator_2"
+                        android:layout_marginTop="@dimen/spacing_normal"
+                        android:layout_marginEnd="@dimen/about_side_padding"
+                        android:layout_marginStart="@dimen/about_side_padding"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/text_size_normal"
+                        android:hint="@string/about_message_hint"
+                        android:inputType="textMultiLine"
+                        tools:ignore="Autofill"/>
+
+                <Button
+                        android:id="@+id/message_send"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/message_edit"
+                        android:layout_marginTop="@dimen/spacing_normal"
+                        android:layout_marginEnd="@dimen/about_side_padding"
+                        android:layout_marginStart="@dimen/about_side_padding"
+                        android:padding="@dimen/spacing_micro"
+                        android:layout_alignParentEnd="true"
+                        android:background="@null"
+                        android:textColor="@color/colorAccent"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/text_size_normal"
+                        android:text="@string/about_message_send"/>
+
+                <ImageButton
+                        android:id="@+id/vk_ico"
+                        android:layout_width="@dimen/icon_size_big"
+                        android:layout_height="@dimen/icon_size_big"
+                        app:srcCompat="@drawable/vk_icon"
+                        android:layout_below="@+id/message_send"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:padding="@dimen/spacing_normal"
+                        android:scaleType="centerCrop"
+                        android:background="@null"
+                        tools:ignore="ContentDescription"/>
+
+                <ImageButton
+                        android:id="@+id/telegram_ico"
+                        android:layout_width="@dimen/icon_size_big"
+                        android:layout_height="@dimen/spacing_big"
+                        app:srcCompat="@drawable/telegram_icon"
+                        android:layout_alignTop="@id/vk_ico"
+                        android:layout_alignBottom="@id/vk_ico"
+                        android:layout_toStartOf="@id/vk_ico"
+                        android:layout_marginEnd="@dimen/spacing_small"
+                        android:padding="@dimen/spacing_normal"
+                        android:scaleType="centerCrop"
+                        android:background="@null"
+                        tools:ignore="ContentDescription"/>
+
+                <ImageButton
+                        android:id="@+id/instagram_ico"
+                        android:layout_width="@dimen/icon_size_big"
+                        android:layout_height="@dimen/icon_size_big"
+                        app:srcCompat="@drawable/instagram_icon"
+                        android:layout_alignTop="@id/vk_ico"
+                        android:layout_alignBottom="@id/vk_ico"
+                        android:layout_toEndOf="@id/vk_ico"
+                        android:layout_marginStart="@dimen/spacing_small"
+                        android:padding="@dimen/spacing_normal"
+                        android:scaleType="centerCrop"
+                        android:background="@null"
+                        tools:ignore="ContentDescription"/>
+
+                <TextView
+                        android:id="@+id/copyright"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_below="@id/vk_ico"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:layout_marginEnd="@dimen/about_side_padding"
+                        android:layout_marginStart="@dimen/about_side_padding"
+                        android:gravity="center_horizontal"
+                        android:textSize="@dimen/text_size_small"
+                        android:text="@string/about_copyright"/>
+            </RelativeLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</LinearLayout>

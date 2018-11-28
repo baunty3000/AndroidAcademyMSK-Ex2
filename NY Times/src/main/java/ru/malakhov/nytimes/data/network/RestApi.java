@@ -10,9 +10,9 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import ru.malakhov.nytimes.data.network.endpoints.DataNewsEndpoint;
 
-public class RestAPI {
+public class RestApi {
 
-    private static final RestAPI mOurInstance = new RestAPI();
+    private static final RestApi mOurInstance = new RestApi();
 
     private static final String URL = "http://api.nytimes.com";
     private static final int TIMEOUT_IN_SECONDS = 2;
@@ -29,14 +29,14 @@ public class RestAPI {
             "technology", "theater", "tmagazine", "travel",
             "upshot", "world"};
 
-    public static RestAPI getInstance() {
+    public static RestApi getInstance() {
         return mOurInstance;
     }
     public DataNewsEndpoint getDataNewsEndpoint() {
         return mDataNewsEndpoint;
     }
 
-    private RestAPI() {
+    private RestApi() {
         OkHttpClient client = buildOkHttpClient();
         Retrofit retrofit = buildRetrofit(client);
         mDataNewsEndpoint = retrofit.create(DataNewsEndpoint.class);

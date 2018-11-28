@@ -1,34 +1,34 @@
-package ru.malakhov.nytimes.ui;
+package ru.malakhov.nytimes.ui.news;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import ru.malakhov.nytimes.data.network.dto.ResultDTO;
+import ru.malakhov.nytimes.data.network.dto.ResultDto;
 import ru.malakhov.nytimes.data.room.AppDatabase;
 import ru.malakhov.nytimes.data.room.NewsEntity;
 
-public class ConverterNews {
+public class NewsConverter {
 
     private final static int LIST_IMAGE_SIZE = 1;
-    public final static String KEY_NO_IMAGE = "no";
 
-    public static List<NewsEntity> dtoToDao(List<ResultDTO> listDto, String newsCategory){
+    public static List<NewsEntity> dtoToDao(List<ResultDto> listDto, String newsCategory){
         List<NewsEntity> listDao = new ArrayList<>();
-        for (ResultDTO dto : listDto){
+        for (ResultDto dto : listDto){
             NewsEntity newsEntity = new NewsEntity();
             newsEntity.setId(dto.getUrl()+newsCategory);
             newsEntity.setUrl(dto.getUrl());
             newsEntity.setSection(newsCategory);
-            newsEntity.setSubsection(dto.getSubsection());
+            newsEntity.setCategory(dto.getCategory());
             newsEntity.setTitle(dto.getTitle());
             newsEntity.setPublishedDate(dto.getPublishedDate());
-            newsEntity.setAbstract(dto.getAbstract());
+            newsEntity.setText(dto.getText());
             if (dto.getMultimedia().size() != 0){
                 newsEntity.setImageUrl(dto.getMultimedia().get(LIST_IMAGE_SIZE).getUrl());
             } else {
-                newsEntity.setImageUrl(KEY_NO_IMAGE);
+                newsEntity.setImageUrl("");
             }
             listDao.add(newsEntity);
         }

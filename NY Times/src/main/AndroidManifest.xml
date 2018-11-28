@@ -11,24 +11,16 @@
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme"
+            android:theme="@style/AppThemeNoActionBar"
             tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name="ru.malakhov.nytimes.ui.ActivityIntro">
+        <activity android:name=".ui.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-        <activity android:name="ru.malakhov.nytimes.ui.ActivityAbout"
-                  android:windowSoftInputMode="adjustPan"/>
-        <activity android:name="ru.malakhov.nytimes.ui.ActivityFullNews"
-                  android:theme="@style/AppThemeNoActionBar"/>
-        <activity android:name="ru.malakhov.nytimes.ui.ActivityRecyclerNews"
-                  android:theme="@style/AppThemeNoActionBar"/>
-        <activity android:name="ru.malakhov.nytimes.ui.ActivityEditorNews"
-                  android:theme="@style/AppThemeNoActionBar"/>
     </application>
 
 </manifest>

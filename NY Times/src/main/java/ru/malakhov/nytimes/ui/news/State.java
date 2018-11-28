@@ -1,5 +1,5 @@
 
-package ru.malakhov.nytimes.ui;
+package ru.malakhov.nytimes.ui.news;
 
 public enum State {
     HasData,

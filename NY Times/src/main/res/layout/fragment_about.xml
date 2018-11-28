@@ -8,6 +8,10 @@
               android:focusableInTouchMode="true"
               android:descendantFocusability="beforeDescendants">
 
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar"/>
+
     <ImageView
             android:id="@+id/photo"
             android:layout_width="match_parent"

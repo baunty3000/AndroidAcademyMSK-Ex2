@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
       xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_edit"
+          app:showAsAction="always"
+          android:icon="@mipmap/edit"
+          android:title="@string/edit_button_menu"
+          android:visible="false"/>
+
+    <item android:id="@+id/menu_delete"
+          android:icon="@mipmap/delete"
+          app:showAsAction="always"
+          android:title="@string/delete_button_menu"
+          android:visible="false"/>
+
     <item android:id="@+id/menu_about"
           android:icon="@drawable/about"
           app:showAsAction="always"
-          android:title="@string/menu_about"/>
+          android:title="@string/menu_about"
+          android:visible="false"/>
+
+    <item android:id="@+id/menu_save"
+          android:icon="@drawable/save"
+          app:showAsAction="always"
+          android:title="@string/save_button_menu"
+          android:visible="false"/>
 </menu>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="horizontal"
+              android:baselineAligned="false">
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:id="@+id/f_toolbar"/>
+
+    <FrameLayout
+            android:id="@+id/frame_list"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_below="@id/f_toolbar"/>
+
+    <FrameLayout
+            android:id="@+id/frame_details"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/f_toolbar" android:layout_toRightOf="@+id/frame_list"/>
+
+</RelativeLayout>

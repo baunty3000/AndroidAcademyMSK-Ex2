@@ -1,13 +1,15 @@
 
-package ru.malakhov.nytimes.ui.adapter;
+package ru.malakhov.nytimes.ui.fragments.news.adapter;
+
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
 
-import android.app.Activity;
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,35 +22,44 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 import ru.malakhov.nytimes.R;
-import ru.malakhov.nytimes.data.network.dto.MultimediumGTO;
-import ru.malakhov.nytimes.data.network.dto.ResultDTO;
-import ru.malakhov.nytimes.ui.ActivityFullNews;
+import ru.malakhov.nytimes.data.room.NewsEntity;
+import ru.malakhov.nytimes.ui.fragments.news.MessageFragmentListener;
 
 public class ViewHolderNews extends RecyclerView.ViewHolder {
 
-    private final int mImageSize = 1;
-
+    public final static String KEY_HOLDER = "KEY_HOLDER";
     private TextView mTitle;
     private ImageView mImageUrl;
     private TextView mCategory;
     private TextView mPublishDate;
     private TextView mPreviewText;
     private ProgressBar mProgressBar;
-    private Activity mActivity;
+    private Context mContext;
 
-    public ViewHolderNews(@NonNull View itemView, Activity activity, List<ResultDTO> newsItems) {
+    private MessageFragmentListener mListener;
+
+    public ViewHolderNews(@NonNull View itemView, List<NewsEntity> newsItems, Context context) {
         super(itemView);
         findViews(itemView);
-        mActivity = activity;
-        itemView.setOnClickListener(view -> ActivityFullNews.start(mActivity, newsItems.get(getAdapterPosition()))); // тут корректно?
+        mContext = context;
+
+        if (context instanceof MessageFragmentListener){
+            mListener = (MessageFragmentListener) context;
+        }
+
+        itemView.setOnClickListener(view -> {
+            if (mListener != null) {
+                mListener.onNewsItemClicked(KEY_HOLDER, newsItems.get(getAdapterPosition()).getId());
+            }
+        });
     }
 
-    public void bind(ResultDTO newsItem) {
+    public void bind(NewsEntity newsItem) {
         mTitle.setText(newsItem.getTitle());
-        setImage(newsItem.getMultimedia());
-        setCategory(newsItem.getSubsection());
+        setImage(newsItem.getImageUrl());
+        setCategory(newsItem.getCategory());
         setPublishDate(newsItem.getPublishedDate());
-        mPreviewText.setText(newsItem.getAbstract());
+        mPreviewText.setText(newsItem.getText());
     }
 
     private void findViews(View itemView){
@@ -60,16 +71,19 @@ public class ViewHolderNews extends RecyclerView.ViewHolder {
         mProgressBar = itemView.findViewById(R.id.pb_image);
     }
 
-    private void setImage(List<MultimediumGTO> url) {
-        if (url.size() == 0){ // если нет картинок, ставим дефолтную картинку
-            Glide.with(mActivity)
+    private void setImage(String url) {
+        RequestOptions requestOptions = new RequestOptions()
+                .placeholder(R.drawable.image_placeholder);
+        if (url.isEmpty()){ // если нет картинок, ставим дефолтную картинку
+            Glide.with(mContext)
                     .load(R.drawable.no_image)
                     .into(mImageUrl);
             return;
         }
         mProgressBar.setVisibility(View.VISIBLE);
-        Glide.with(mActivity)
-                .load(url.get(mImageSize).getUrl())
+
+        Glide.with(mContext)
+                .load(url)
                 .listener(new RequestListener<Drawable>() {
                     @Override
                     public boolean onLoadFailed(@Nullable GlideException e, Object model,
@@ -86,12 +100,13 @@ public class ViewHolderNews extends RecyclerView.ViewHolder {
                         return false;
                     }
                 })
+                .apply(requestOptions)
                 .into(mImageUrl);
     }
 
     private void setCategory(String category) {
         mCategory.setVisibility(View.VISIBLE);
-        if (category.equals(""))
+        if (category.isEmpty())
             mCategory.setVisibility(View.GONE);
         else
             mCategory.setText(category);

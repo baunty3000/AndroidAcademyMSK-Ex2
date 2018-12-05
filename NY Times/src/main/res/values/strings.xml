@@ -35,5 +35,16 @@
         again
     </string>
     <string name="tv_no_data">No data</string>
+    <string name="text_intro">Welcome!</string>
+
+    <string name="image_intro">Image Intro</string>
+    <string name="edit_button_menu">Edit button</string>
+    <string name="save_button_menu">Save button</string>
+    <string name="delete_button_menu">Delete button</string>
+    <string name="hint_editor_date">Дата статьи...</string>
+    <string name="hint_editor_category">Категория статьи...</string>
+    <string name="hint_editor_title">Заголовок статьи...</string>
+    <string name="hint_editor_text">Текст статьи...</string>
+    <string name="spinner">ActionBar Spinner</string>
 
 </resources>

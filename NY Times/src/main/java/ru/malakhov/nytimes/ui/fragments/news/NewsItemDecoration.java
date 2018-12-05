@@ -1,5 +1,5 @@
 
-package ru.malakhov.nytimes.ui.news;
+package ru.malakhov.nytimes.ui.fragments.news;
 
 import android.content.res.Configuration;
 import android.graphics.Rect;

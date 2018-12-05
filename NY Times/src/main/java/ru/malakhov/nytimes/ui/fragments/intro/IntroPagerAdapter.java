@@ -1,4 +1,4 @@
-package ru.malakhov.nytimes.ui.intro;
+package ru.malakhov.nytimes.ui.fragments.intro;
 
 import java.util.ArrayList;
 import java.util.List;

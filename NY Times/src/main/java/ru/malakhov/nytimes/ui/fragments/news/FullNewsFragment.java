@@ -1,4 +1,4 @@
-package ru.malakhov.nytimes.ui.news;
+package ru.malakhov.nytimes.ui.fragments.news;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
@@ -8,9 +8,6 @@ import com.bumptech.glide.request.RequestOptions;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -28,13 +25,11 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import ru.malakhov.nytimes.R;
 import ru.malakhov.nytimes.data.room.NewsEntity;
-import ru.malakhov.nytimes.ui.activity.MainActivity;
 
-public class FragmentFullNews extends Fragment {
+public class FullNewsFragment extends Fragment {
 
     private static final int LAYOUT = R.layout.fragment_full_news;
     private final static String ARGS_MESSAGE = "args:message";
-    public final static String MESSAGE_ID = "NewsEdit";
 
 
     private NewsEntity mNewsEntity;
@@ -49,8 +44,8 @@ public class FragmentFullNews extends Fragment {
 
     private MessageFragmentListener mListener;
 
-    public static FragmentFullNews newInstance(String newsID){
-        FragmentFullNews fragmentFullNews = new FragmentFullNews();
+    public static FullNewsFragment newInstance(String newsID){
+        FullNewsFragment fragmentFullNews = new FullNewsFragment();
         Bundle bundle = new Bundle();
         bundle.putString(ARGS_MESSAGE, newsID);
         fragmentFullNews.setArguments(bundle);
@@ -93,8 +88,6 @@ public class FragmentFullNews extends Fragment {
     }
 
     private void init(View view) {
-        setHasOptionsMenu(true);
-        setHomeButton(view);
         findViews(view);
     }
 
@@ -115,14 +108,6 @@ public class FragmentFullNews extends Fragment {
                         setDataViews();
                     });
             mCompositeDisposable.add(mGetNews);
-        }
-    }
-
-    private void setHomeButton(View view) {
-        ((AppCompatActivity)getContext()).setSupportActionBar(view.findViewById(R.id.toolbar));
-        ActionBar supportActionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
-        if (supportActionBar != null) {
-            supportActionBar.setDisplayHomeAsUpEnabled(true);
         }
     }
 
@@ -149,41 +134,13 @@ public class FragmentFullNews extends Fragment {
                 .into(mImage);
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_full_news, menu);
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                backStack();
-                break;
-            case R.id.menu_edit:
-                if (mListener != null & getArguments() != null) {
-                    mListener.onNextMessageClicked(MESSAGE_ID, getArguments().getString(ARGS_MESSAGE));
-                }
-                break;
-            case R.id.menu_delete:
-                Disposable deleteNews = Single.fromCallable(() -> {
-                    NewsConverter.deleteNewsFromDb(getContext(), mNewsEntity);
-                    return true; })
-                        .subscribeOn(Schedulers.io())
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe();
-                mCompositeDisposable.add(deleteNews);
-                backStack();
-                break;
-            default: throw new IllegalArgumentException(getString(R.string.error_no_id)+": "+item.getItemId());
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    private void backStack(){
-        if (mListener != null) {
-            mListener.onNextMessageClicked(MainActivity.MESSAGE_BACK_STACK, null);
-        }
+    public void deleteNews(){
+        Disposable deleteNews = Single.fromCallable(() -> {
+            NewsConverter.deleteNewsFromDb(getContext(), mNewsEntity);
+            return true; })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe();
+        mCompositeDisposable.add(deleteNews);
     }
 }

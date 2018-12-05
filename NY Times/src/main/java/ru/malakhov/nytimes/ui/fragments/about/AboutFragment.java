@@ -1,11 +1,10 @@
-package ru.malakhov.nytimes.ui.about;
+package ru.malakhov.nytimes.ui.fragments.about;
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -18,8 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import ru.malakhov.nytimes.R;
-import ru.malakhov.nytimes.ui.activity.MainActivity;
-import ru.malakhov.nytimes.ui.news.MessageFragmentListener;
+import ru.malakhov.nytimes.ui.fragments.news.MessageFragmentListener;
 
 public class AboutFragment extends Fragment {
 
@@ -53,8 +51,8 @@ public class AboutFragment extends Fragment {
     }
 
     private void init(View view) {
-        setHasOptionsMenu(true);
-        setHomeButton(view);
+//        setHasOptionsMenu(true);
+//        setHomeButton(view);
         setLinkViews(view);
         setEmailSending(view);
     }
@@ -103,7 +101,7 @@ public class AboutFragment extends Fragment {
         view.findViewById(R.id.message_send).setOnClickListener(v -> sendEmail(ptMessage.getText().toString()));
     }
 
-    @Override
+  /*  @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
@@ -119,6 +117,6 @@ public class AboutFragment extends Fragment {
         if (mListener != null) {
             mListener.onNextMessageClicked(MainActivity.MESSAGE_BACK_STACK, null);
         }
-    }
+    }*/
 }
 

@@ -1,4 +1,4 @@
-package ru.malakhov.nytimes.ui.intro;
+package ru.malakhov.nytimes.ui.fragments.intro;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

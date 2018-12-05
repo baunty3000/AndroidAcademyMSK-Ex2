@@ -18,7 +18,7 @@
             android:clickable="true"
             android:focusable="true"/>
 
-    <androidx.appcompat.widget.Toolbar
+   <!-- <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             style="@style/Toolbar">
 
@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:gravity="end"/>
-    </androidx.appcompat.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>-->
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_news"

@@ -1,7 +1,6 @@
-package ru.malakhov.nytimes.ui.news;
+package ru.malakhov.nytimes.ui.fragments.news;
 
 import android.content.Context;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;

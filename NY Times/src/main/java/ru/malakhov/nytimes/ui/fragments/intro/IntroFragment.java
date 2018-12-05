@@ -1,4 +1,4 @@
-package ru.malakhov.nytimes.ui.intro;
+package ru.malakhov.nytimes.ui.fragments.intro;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -13,11 +13,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 import me.relex.circleindicator.CircleIndicator;
 import ru.malakhov.nytimes.R;
-import ru.malakhov.nytimes.ui.news.MessageFragmentListener;
+import ru.malakhov.nytimes.ui.fragments.news.MessageFragmentListener;
 
 public class IntroFragment extends Fragment {
 
-    public static final String MESSAGE_ID = "FRAGMENT_INTRO";
+    public static final String KEY_INTRO = "KEY_INTRO";
     private MessageFragmentListener mListener;
 
     @Override
@@ -48,7 +48,7 @@ public class IntroFragment extends Fragment {
         indicator.setViewPager(viewPager);
         view.findViewById(R.id.intro_text).setOnClickListener(v -> {
             if (mListener != null){
-                mListener.onNextMessageClicked(MESSAGE_ID, null);
+                mListener.onNewsItemClicked(KEY_INTRO, null);
             }
         });
         return view;

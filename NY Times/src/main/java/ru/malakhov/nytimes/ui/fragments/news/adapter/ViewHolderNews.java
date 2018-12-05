@@ -1,5 +1,5 @@
 
-package ru.malakhov.nytimes.ui.news.adapter;
+package ru.malakhov.nytimes.ui.fragments.news.adapter;
 
 
 import com.bumptech.glide.Glide;
@@ -23,11 +23,11 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 import ru.malakhov.nytimes.R;
 import ru.malakhov.nytimes.data.room.NewsEntity;
-import ru.malakhov.nytimes.ui.news.MessageFragmentListener;
+import ru.malakhov.nytimes.ui.fragments.news.MessageFragmentListener;
 
 public class ViewHolderNews extends RecyclerView.ViewHolder {
 
-    public final static String MESSAGE_ID = "Holder";
+    public final static String KEY_HOLDER = "KEY_HOLDER";
     private TextView mTitle;
     private ImageView mImageUrl;
     private TextView mCategory;
@@ -49,7 +49,7 @@ public class ViewHolderNews extends RecyclerView.ViewHolder {
 
         itemView.setOnClickListener(view -> {
             if (mListener != null) {
-                mListener.onNextMessageClicked(MESSAGE_ID, newsItems.get(getAdapterPosition()).getId());
+                mListener.onNewsItemClicked(KEY_HOLDER, newsItems.get(getAdapterPosition()).getId());
             }
         });
     }

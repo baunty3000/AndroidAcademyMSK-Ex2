@@ -1,5 +1,5 @@
 
-package ru.malakhov.nytimes.ui.news.adapter;
+package ru.malakhov.nytimes.ui.fragments.news.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

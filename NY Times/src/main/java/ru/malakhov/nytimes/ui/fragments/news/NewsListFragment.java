@@ -1,20 +1,17 @@
 
-package ru.malakhov.nytimes.ui.news;
+package ru.malakhov.nytimes.ui.fragments.news;
 
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ProgressBar;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -25,7 +22,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import io.reactivex.Single;
@@ -37,20 +33,18 @@ import ru.malakhov.nytimes.R;
 import ru.malakhov.nytimes.data.network.RestApi;
 import ru.malakhov.nytimes.data.network.dto.DataNewsDto;
 import ru.malakhov.nytimes.data.room.NewsEntity;
-import ru.malakhov.nytimes.ui.news.adapter.AdapterRecyclerNews;
+import ru.malakhov.nytimes.ui.fragments.news.adapter.AdapterRecyclerNews;
 
-public class FragmentNewsList extends Fragment {
+public class NewsListFragment extends Fragment {
 
-    public static final String MESSAGE_ID = "FRAGMENT_RECYCLER";
     private static final int LAYOUT = R.layout.fragment_news_list;
-    private final static int SPINNER_DEFAULT_ITEM = 0;
     private TextView mTvError;
     private TextView mTvNoData;
     private Button mBtnError;
     private RecyclerView mRecycler;
     private ProgressBar mProgressBar;
     private Disposable mDisposableNews;
-    private Spinner mSpinner;
+    private String mSpinnerItem;
 
     private MessageFragmentListener mListener;
 
@@ -62,26 +56,71 @@ public class FragmentNewsList extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        Log.d(TAG, "onAttach: ");
         if (context instanceof MessageFragmentListener){
             mListener = (MessageFragmentListener) context;
         }
     }
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate: ");
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        Log.d(TAG, "onActivityCreated: ");
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart: ");
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d(TAG, "onResume: ");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.d(TAG, "onPause: ");
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "onDestroy: ");
+    }
+    
+    
+
+    @Override
     public void onDetach() {
         mListener = null;
         super.onDetach();
+        Log.d(TAG, "onDetach: ");
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState) {
+        Log.d(TAG, "onCreateView news: ");
         View view = inflater.inflate(LAYOUT, container, false);
         init(view);
         setItemOrientation(mRecycler); // отображение элементов в разных ориентациях
-        mAdapter = new AdapterRecyclerNews(getActivity());
+        mAdapter = new AdapterRecyclerNews(getContext());
         mRecycler.setAdapter(mAdapter);
+
+        if (mSpinnerItem != null && !mSpinnerItem.isEmpty()){ // если есть элемент категории, делаем инициализацию спиннера
+            loadItems(mSpinnerItem);
+        }
         return view;
     }
 
@@ -91,61 +130,36 @@ public class FragmentNewsList extends Fragment {
         mBtnError = view.findViewById(R.id.btn_try_again);
         mTvNoData = view.findViewById(R.id.tv_no_data);
         mProgressBar = view.findViewById(R.id.pr_bar_recycler);
-        mSpinner = view.findViewById(R.id.spinner);
     }
 
     @Override
     public void onStop() {
         mCompositeDisposable.clear();
         super.onStop();
+        Log.d(TAG, "onStop: ");
+    }
+
+    public void setSpinnerItem(String spinnerItem) {
+        mSpinnerItem = spinnerItem;
+        loadItems(spinnerItem);
     }
 
     private void setItemOrientation(RecyclerView rvNews) {
         int px = getResources().getDimensionPixelSize(R.dimen.spacing_small);
-    /*    int columns = getResources().getInteger(R.integer.landscape_news_columns_count);
-        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {*/
-            rvNews.setLayoutManager(new LinearLayoutManager(getContext()));
-            rvNews.addItemDecoration(new NewsItemDecoration(px, Configuration.ORIENTATION_PORTRAIT));
-/*        } else {
-            rvNews.setLayoutManager(new GridLayoutManager(getContext(), columns));
-            rvNews.addItemDecoration(new NewsItemDecoration(columns, px, Configuration.ORIENTATION_LANDSCAPE));
-        }*/
+        rvNews.setLayoutManager(new LinearLayoutManager(getContext()));
+        rvNews.addItemDecoration(new NewsItemDecoration(px, Configuration.ORIENTATION_PORTRAIT));
     }
 
     private void init(View view) {
         findViews(view);
-        setHasOptionsMenu(true);
-        setToolbar(view);
         setFab(view);
-        mBtnError.setOnClickListener(v -> loadItems(RestApi.mSections[mSpinner.getSelectedItemPosition()]));
-    }
-
-    private void setToolbar(View view) {
-        ((AppCompatActivity)getActivity()).setSupportActionBar(view.findViewById(R.id.toolbar));
-        setSpinner();
-    }
-
-    private void setSpinner() {
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), R.layout.simple_spinner_item, RestApi.mSections);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        mSpinner.setAdapter(adapter);
-        mSpinner.setSelection(SPINNER_DEFAULT_ITEM);
-        mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                loadItems(RestApi.mSections[position]);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
+        mBtnError.setOnClickListener(v -> loadItems(mSpinnerItem));
     }
 
     private void setFab(View view) {
         view.findViewById(R.id.fab).setOnClickListener(v -> {
             mNewsItems.clear();
-            loadFromApi(getNewsCategory());
+            loadFromApi(mSpinnerItem);
         });
     }
 
@@ -166,7 +180,7 @@ public class FragmentNewsList extends Fragment {
 
     private void checkResponseDb(List<NewsEntity> newsEntityList) {
         if (newsEntityList.size()==0){
-            loadFromApi(getNewsCategory());
+            loadFromApi(mSpinnerItem);
         } else {
             mNewsItems.addAll(newsEntityList);
             mAdapter.setNewsItems(mNewsItems);
@@ -193,8 +207,8 @@ public class FragmentNewsList extends Fragment {
                     .subscribeOn(Schedulers.io())
                     .map(listResultDto -> {
                         NewsConverter.saveAllNewsToDb(getContext(), NewsConverter
-                                .dtoToDao(listResultDto, getNewsCategory()), getNewsCategory());
-                        return NewsConverter.loadNewsFromDb(getContext(), getNewsCategory());
+                                .dtoToDao(listResultDto, mSpinnerItem), mSpinnerItem);
+                        return NewsConverter.loadNewsFromDb(getContext(), mSpinnerItem);
                     })
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(newsEntityList -> {
@@ -261,28 +275,5 @@ public class FragmentNewsList extends Fragment {
                 break;
             default: throw new IllegalArgumentException(getString(R.string.error_no_id)+": "+state);
         }
-    }
-
-    private String getNewsCategory(){
-        return RestApi.mSections[mSpinner.getSelectedItemPosition()];
-    }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_about, menu);
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_about:
-                if (mListener != null) {
-                    mListener.onNextMessageClicked(MESSAGE_ID, null);
-                }
-                break;
-            default: throw new IllegalArgumentException(getString(R.string.error_no_id)+": "+item.getItemId());
-        }
-        return super.onOptionsItemSelected(item);
     }
 }

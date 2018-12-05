@@ -1,13 +1,10 @@
-package ru.malakhov.nytimes.ui.news;
+package ru.malakhov.nytimes.ui.fragments.news;
 
 import com.bumptech.glide.Glide;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -26,9 +23,9 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import ru.malakhov.nytimes.R;
 import ru.malakhov.nytimes.data.room.NewsEntity;
-import ru.malakhov.nytimes.ui.activity.MainActivity;
 
-public class FragmentEditorNews extends Fragment {
+public class NewsEditorFragment extends Fragment {
+
     private static final int LAYOUT = R.layout.fragment_editor_news;
 
     private EditText mDate;
@@ -43,8 +40,8 @@ public class FragmentEditorNews extends Fragment {
 
     private MessageFragmentListener mListener;
 
-    public static FragmentEditorNews newInstance(String newsID){
-        FragmentEditorNews fragmentEditorNews = new FragmentEditorNews();
+    public static NewsEditorFragment newInstance(String newsID){
+        NewsEditorFragment fragmentEditorNews = new NewsEditorFragment();
         Bundle bundle = new Bundle();
         bundle.putString(ARGS_MESSAGE, newsID);
         fragmentEditorNews.setArguments(bundle);
@@ -81,8 +78,8 @@ public class FragmentEditorNews extends Fragment {
     }
 
     private void init(View view) {
-        setHasOptionsMenu(true);
-        setHomeButton(view);
+//        setHasOptionsMenu(true);
+//        setHomeButton(view);
         findViews(view);
         getNews();
     }
@@ -125,7 +122,7 @@ public class FragmentEditorNews extends Fragment {
         mTitle.setText(mNewsEntity.getTitle());
     }
 
-    private void editNews() {
+    public void editNews() {
         mNewsEntity.setPublishedDate(mDate.getText().toString());
         mNewsEntity.setCategory(mCategory.getText().toString());
         mNewsEntity.setTitle(mTitle.getText().toString());
@@ -139,32 +136,5 @@ public class FragmentEditorNews extends Fragment {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe();
         mCompositeDisposable.add(saveNews);
-    }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_editor_news, menu);
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                backStack();
-                break;
-            case R.id.menu_save:
-                editNews();
-                backStack();
-                break;
-            default: throw new IllegalArgumentException(getString(R.string.error_no_id)+": "+item.getItemId());
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    private void backStack(){
-        if (mListener != null) {
-            mListener.onNextMessageClicked(MainActivity.MESSAGE_BACK_STACK, null);
-        }
     }
 }

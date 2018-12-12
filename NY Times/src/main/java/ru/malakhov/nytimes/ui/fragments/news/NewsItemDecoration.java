@@ -1,5 +1,5 @@
 
-package ru.malakhov.nytimes.ui;
+package ru.malakhov.nytimes.ui.fragments.news;
 
 import android.content.res.Configuration;
 import android.graphics.Rect;
@@ -8,19 +8,19 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ItemDecorationNews extends RecyclerView.ItemDecoration {
+public class NewsItemDecoration extends RecyclerView.ItemDecoration {
 
     private final int mSpacing;
     private final int mOrientation;
     private final int mSpanCount;
 
-    public ItemDecorationNews(int spacing, int orientation) {
+    public NewsItemDecoration(int spacing, int orientation) {
         mSpacing = spacing;
         mOrientation = orientation;
         mSpanCount = 0;
     }
 
-    public ItemDecorationNews(int spanCount, int spacing, int orientation) {
+    public NewsItemDecoration(int spanCount, int spacing, int orientation) {
         mSpacing = spacing;
         mOrientation = orientation;
         mSpanCount = spanCount;

@@ -12,7 +12,7 @@ public abstract class AppDatabase extends RoomDatabase {
 
     private static final String DATABASE_NAME = "NewsRoomDb.db";
 
-    public abstract NewsDAO newsDao();
+    public abstract NewsDao newsDao();
 
     public static AppDatabase getAppDatabase(Context context){
         if (mSingleton == null){

@@ -4,22 +4,26 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:orientation="horizontal"
+              android:orientation="vertical"
               android:focusableInTouchMode="true"
               android:descendantFocusability="beforeDescendants">
 
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar" />
+
     <ImageView
             android:id="@+id/photo"
-            android:layout_width="@dimen/spacing_weight"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_weight"
             android:layout_weight="0.75"
             app:srcCompat="@drawable/photo"
             android:scaleType="centerCrop"
             android:contentDescription="@string/about_photo"/>
 
     <ScrollView
-            android:layout_width="@dimen/spacing_weight"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_weight"
             android:layout_weight="1">
 
         <RelativeLayout android:layout_width="match_parent"
@@ -126,7 +130,7 @@
                     android:padding="@dimen/spacing_micro"
                     android:layout_alignParentEnd="true"
                     android:background="@null"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/btn_color"
                     android:gravity="center_vertical"
                     android:textSize="@dimen/text_size_normal"
                     android:text="@string/about_message_send"/>

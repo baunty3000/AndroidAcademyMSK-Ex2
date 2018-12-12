@@ -1,5 +1,5 @@
 
-package ru.malakhov.nytimes.ui.adapter;
+package ru.malakhov.nytimes.ui.fragments.news.adapter;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
@@ -7,7 +7,7 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 
-import android.app.Activity;
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,9 +20,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 import ru.malakhov.nytimes.R;
-import ru.malakhov.nytimes.ui.ConverterNews;
+import ru.malakhov.nytimes.ui.activity.MainActivity;
+import ru.malakhov.nytimes.ui.fragments.MessageFragmentListener;
+import ru.malakhov.nytimes.ui.fragments.news.NewsConverter;
 import ru.malakhov.nytimes.data.room.NewsEntity;
-import ru.malakhov.nytimes.ui.ActivityFullNews;
 
 public class ViewHolderNews extends RecyclerView.ViewHolder {
 
@@ -32,21 +33,31 @@ public class ViewHolderNews extends RecyclerView.ViewHolder {
     private TextView mPublishDate;
     private TextView mPreviewText;
     private ProgressBar mProgressBar;
-    private Activity mActivity;
+    private Context mContext;
+    private MessageFragmentListener mListener;
 
-    public ViewHolderNews(@NonNull View itemView, Activity activity, List<NewsEntity> newsItems) {
+    public ViewHolderNews(@NonNull View itemView, Context context, List<NewsEntity> newsItems) {
         super(itemView);
         findViews(itemView);
-        mActivity = activity;
-        itemView.setOnClickListener(view -> ActivityFullNews.start(mActivity, newsItems.get(getAdapterPosition()).getId())); // тут корректно?
+        mContext = context;
+
+        if (context instanceof MessageFragmentListener){
+            mListener = (MessageFragmentListener) context;
+        }
+
+        itemView.setOnClickListener(view -> {
+            if (mListener != null) {
+                mListener.onNewsItemClicked(MainActivity.TAG_FULL_NEWS, newsItems.get(getAdapterPosition()).getId());
+            }
+        });
     }
 
     public void bind(NewsEntity newsItem) {
         mTitle.setText(newsItem.getTitle());
-        setImage(newsItem.getImageUrl());
-        setCategory(newsItem.getSubsection());
+        setImage(newsItem.getImage());
+        setCategory(newsItem.getCategory());
         setPublishDate(newsItem.getPublishedDate());
-        mPreviewText.setText(newsItem.getAbstract());
+        mPreviewText.setText(newsItem.getText());
     }
 
     private void findViews(View itemView){
@@ -59,14 +70,14 @@ public class ViewHolderNews extends RecyclerView.ViewHolder {
     }
 
     private void setImage(String url) {
-        if (url.equals(ConverterNews.KEY_NO_IMAGE)){ // если нет картинок, ставим дефолтную картинку
-            Glide.with(mActivity)
+        if (url.equals(NewsConverter.KEY_NO_IMAGE)){ // если нет картинок, ставим дефолтную картинку
+            Glide.with(mContext)
                     .load(R.drawable.no_image)
                     .into(mImageUrl);
             return;
         }
         mProgressBar.setVisibility(View.VISIBLE);
-        Glide.with(mActivity)
+        Glide.with(mContext)
                 .load(url)
                 .listener(new RequestListener<Drawable>() {
                     @Override
@@ -89,7 +100,7 @@ public class ViewHolderNews extends RecyclerView.ViewHolder {
 
     private void setCategory(String category) {
         mCategory.setVisibility(View.VISIBLE);
-        if (category.equals(""))
+        if (category.isEmpty())
             mCategory.setVisibility(View.GONE);
         else
             mCategory.setText(category);

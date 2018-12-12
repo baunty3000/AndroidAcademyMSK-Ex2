@@ -1,5 +1,7 @@
 package ru.malakhov.nytimes.data.room;
 
+import java.util.Objects;
+
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -22,7 +24,7 @@ public class NewsEntity {
 
     @NonNull
     @ColumnInfo(name = "subsection")
-    private String mSubsection;
+    private String mCategory;
 
     @NonNull
     @ColumnInfo(name = "title")
@@ -30,7 +32,7 @@ public class NewsEntity {
 
     @NonNull
     @ColumnInfo(name = "abstract")
-    private String mAbstract;
+    private String mText;
 
     @NonNull
     @ColumnInfo(name = "url")
@@ -42,7 +44,7 @@ public class NewsEntity {
 
     @NonNull
     @ColumnInfo(name = "imageurl")
-    private String mImageUrl;
+    private String mImage;
 
     @NonNull
     public String getId() {
@@ -55,8 +57,8 @@ public class NewsEntity {
     }
 
     @NonNull
-    public String getSubsection() {
-        return mSubsection;
+    public String getCategory() {
+        return mCategory;
     }
 
     @NonNull
@@ -65,8 +67,8 @@ public class NewsEntity {
     }
 
     @NonNull
-    public String getAbstract() {
-        return mAbstract;
+    public String getText() {
+        return mText;
     }
 
     @NonNull
@@ -80,8 +82,8 @@ public class NewsEntity {
     }
 
     @NonNull
-    public String getImageUrl() {
-        return mImageUrl;
+    public String getImage() {
+        return mImage;
     }
 
     public void setId(@NonNull String id) {
@@ -92,16 +94,16 @@ public class NewsEntity {
         mSection = section;
     }
 
-    public void setSubsection(@NonNull String subsection) {
-        mSubsection = subsection;
+    public void setCategory(@NonNull String category) {
+        mCategory = category;
     }
 
     public void setTitle(@NonNull String title) {
         mTitle = title;
     }
 
-    public void setAbstract(@NonNull String anAbstract) {
-        mAbstract = anAbstract;
+    public void setText(@NonNull String text) {
+        mText = text;
     }
 
     public void setUrl(@NonNull String url) {
@@ -112,7 +114,36 @@ public class NewsEntity {
         mPublishedDate = publishedDate;
     }
 
-    public void setImageUrl(@NonNull String imageUrl) {
-        mImageUrl = imageUrl;
+    public void setImage(@NonNull String image) {
+        mImage = image;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        NewsEntity that = (NewsEntity) o;
+        return Objects.equals(mId, that.mId) && Objects.equals(mSection, that.mSection) && Objects
+                .equals(mCategory, that.mCategory) && Objects.equals(mTitle, that.mTitle) && Objects
+                .equals(mText, that.mText) && Objects.equals(mUrl, that.mUrl) && Objects
+                .equals(mPublishedDate, that.mPublishedDate) && Objects.equals(mImage, that.mImage);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(mId, mSection, mCategory, mTitle, mText, mUrl, mPublishedDate, mImage);
+    }
+
+    @Override
+    public String toString() {
+        return "NewsEntity{" + "mId='" + mId + '\'' + ", mSection='" + mSection + '\''
+                + ", mCategory='" + mCategory + '\'' + ", mTitle='" + mTitle + '\'' + ", mText='"
+                + mText + '\'' + ", mUrl='" + mUrl + '\'' + ", mPublishedDate='" + mPublishedDate
+                + '\'' + ", mImage='" + mImage + '\'' + '}';
     }
 }

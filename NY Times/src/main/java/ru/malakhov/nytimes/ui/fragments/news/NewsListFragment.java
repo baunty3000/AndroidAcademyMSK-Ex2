@@ -1,13 +1,15 @@
 
-package ru.malakhov.nytimes.ui;
+package ru.malakhov.nytimes.ui.fragments.news;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -19,8 +21,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,14 +34,16 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import ru.malakhov.nytimes.R;
-import ru.malakhov.nytimes.data.network.RestAPI;
-import ru.malakhov.nytimes.data.network.dto.DataNewsDTO;
+import ru.malakhov.nytimes.data.network.RestApi;
+import ru.malakhov.nytimes.data.network.dto.DataNewsDto;
 import ru.malakhov.nytimes.data.room.NewsEntity;
-import ru.malakhov.nytimes.ui.adapter.AdapterRecyclerNews;
+import ru.malakhov.nytimes.ui.activity.MainActivity;
+import ru.malakhov.nytimes.ui.fragments.MessageFragmentListener;
+import ru.malakhov.nytimes.ui.fragments.news.adapter.AdapterRecyclerNews;
 
-public class ActivityRecyclerNews extends AppCompatActivity {
+public class NewsListFragment extends Fragment {
 
-    private static final int LAYOUT = R.layout.activity_recycler_news;
+    private static final int LAYOUT = R.layout.fragment_recycler_news;
     private final static int SPINNER_DEFAULT_ITEM = 0;
     private TextView mTvError;
     private TextView mTvNoData;
@@ -46,77 +52,95 @@ public class ActivityRecyclerNews extends AppCompatActivity {
     private ProgressBar mProgressBar;
     private Disposable mDisposableNews;
     private Spinner mSpinner;
-    private Context mContext;
 
     private static List<NewsEntity> mNewsItems = new ArrayList<>();
     private CompositeDisposable mCompositeDisposable = new CompositeDisposable();
     private AdapterRecyclerNews mAdapter;
 
+    private MessageFragmentListener mListener;
+
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(LAYOUT);
-        init();
-        setItemOrientation(mRecycler); // отображение элементов в разных ориентациях
-        mAdapter = new AdapterRecyclerNews(this);
-        mRecycler.setAdapter(mAdapter);
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof MessageFragmentListener){
+            mListener = (MessageFragmentListener) context;
+        }
     }
 
     @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
         loadItems(getNewsCategory());
     }
 
+    @Nullable
     @Override
-    protected void onStop() {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+            @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(LAYOUT, container, false);
+        init(view);
+        return view;
+    }
+
+    @Override
+    public void onStop() {
         super.onStop();
         mCompositeDisposable.clear();
+    }
+
+    @Override
+    public void onDetach() {
+        mListener = null;
+        super.onDetach();
+    }
+
+    private void init(View view) {
+        setHasOptionsMenu(true);
+        findViews(view);
+        setToolbar(view);
+        setFab(view);
+        setItemOrientation(mRecycler); // отображение элементов в разных ориентациях
+        mAdapter = new AdapterRecyclerNews(getContext());
+        mRecycler.setAdapter(mAdapter);
+
+        mBtnError.setOnClickListener(v->loadItems(RestApi.mSections[mSpinner.getSelectedItemPosition()]));
     }
 
     private void setItemOrientation(RecyclerView rvNews) {
         int px = getResources().getDimensionPixelSize(R.dimen.spacing_small);
         int columns = getResources().getInteger(R.integer.landscape_news_columns_count);
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            rvNews.setLayoutManager(new LinearLayoutManager(this));
-            rvNews.addItemDecoration(new ItemDecorationNews(px, Configuration.ORIENTATION_PORTRAIT));
+            rvNews.setLayoutManager(new LinearLayoutManager(getContext()));
+            rvNews.addItemDecoration(new NewsItemDecoration(px, Configuration.ORIENTATION_PORTRAIT));
         } else {
-            rvNews.setLayoutManager(new GridLayoutManager(this, columns));
-            rvNews.addItemDecoration(new ItemDecorationNews(columns , px, Configuration.ORIENTATION_LANDSCAPE));
+            rvNews.setLayoutManager(new GridLayoutManager(getContext(), columns));
+            rvNews.addItemDecoration(new NewsItemDecoration(columns , px, Configuration.ORIENTATION_LANDSCAPE));
         }
     }
 
-    private void findViews(){
-        mRecycler = findViewById(R.id.rv_news);
-        mTvError = findViewById(R.id.tv_network_error);
-        mBtnError = findViewById(R.id.btn_try_again);
-        mTvNoData = findViewById(R.id.tv_no_data);
-        mProgressBar = findViewById(R.id.pr_bar_recycler);
-        mSpinner = findViewById(R.id.spinner);
+    private void findViews(View view){
+        mRecycler = view.findViewById(R.id.rv_news);
+        mTvError = view.findViewById(R.id.tv_network_error);
+        mBtnError = view.findViewById(R.id.btn_try_again);
+        mTvNoData = view.findViewById(R.id.tv_no_data);
+        mProgressBar = view.findViewById(R.id.pr_bar_recycler);
+        mSpinner = view.findViewById(R.id.spinner);
     }
 
-    private void init() {
-        mContext = this;
-        findViews();
-        setToolbar();
-        setFab();
-        mBtnError.setOnClickListener(v->loadItems(RestAPI.mSections[mSpinner.getSelectedItemPosition()]));
-    }
-
-    private void setToolbar() {
-        setSupportActionBar(findViewById(R.id.toolbar));
+    private void setToolbar(View view) {
+        ((AppCompatActivity) getContext()).setSupportActionBar(view.findViewById(R.id.toolbar));
         setSpinner();
     }
 
     private void setSpinner() {
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.simple_spinner_item, RestAPI.mSections);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), R.layout.simple_spinner_item, RestApi.mSections);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mSpinner.setAdapter(adapter);
         mSpinner.setSelection(SPINNER_DEFAULT_ITEM);
         mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                loadItems(RestAPI.mSections[position]);
+                loadItems(RestApi.mSections[position]);
             }
 
             @Override
@@ -125,8 +149,8 @@ public class ActivityRecyclerNews extends AppCompatActivity {
         });
     }
 
-    private void setFab() {
-        findViewById(R.id.fab).setOnClickListener(v -> {
+    private void setFab(View view) {
+        view.findViewById(R.id.fab).setOnClickListener(v -> {
             mNewsItems.clear();
             loadFromApi(getNewsCategory());
         });
@@ -139,7 +163,8 @@ public class ActivityRecyclerNews extends AppCompatActivity {
     }
 
     private void loadFromDb(String section){
-         Disposable loadFromDb = Single.fromCallable(() -> ConverterNews.loadNewsFromDb(mContext, section))
+         Disposable loadFromDb = Single.fromCallable(() -> NewsConverter
+                 .loadNewsFromDb(getContext(), section))
                  .subscribeOn(Schedulers.io())
                  .observeOn(AndroidSchedulers.mainThread())
                  .subscribe(this::checkResponseDb, this::handleError);
@@ -157,7 +182,7 @@ public class ActivityRecyclerNews extends AppCompatActivity {
     }
 
     private void loadFromApi(String section){
-        mDisposableNews = RestAPI.getInstance()
+        mDisposableNews = RestApi.getInstance()
                 .getDataNewsEndpoint()
                 .getNews(section)
                 .subscribeOn(Schedulers.io())
@@ -166,16 +191,17 @@ public class ActivityRecyclerNews extends AppCompatActivity {
         mCompositeDisposable.add(mDisposableNews);
     }
 
-    private void checkResponseApi(DataNewsDTO dataNewsDTO) {
-        if (dataNewsDTO.getResults().size()==0){
+    private void checkResponseApi(DataNewsDto dataNewsDto) {
+        if (dataNewsDto.getResults().size()==0){
             showState(State.HasNoData);
         }
         else {
-            Disposable saveNewsToDb = Single.fromCallable(dataNewsDTO::getResults)
+            Disposable saveNewsToDb = Single.fromCallable(dataNewsDto::getResults)
                     .subscribeOn(Schedulers.io())
                     .map(listResultDto -> {
-                        ConverterNews.saveAllNewsToDb(mContext, ConverterNews.dtoToDao(listResultDto, getNewsCategory()), getNewsCategory());
-                        return ConverterNews.loadNewsFromDb(mContext, getNewsCategory());
+                        NewsConverter.saveAllNewsToDb(getContext(), NewsConverter
+                                .dtoToDao(listResultDto, getNewsCategory()), getNewsCategory());
+                        return NewsConverter.loadNewsFromDb(getContext(), getNewsCategory());
                     })
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(newsEntityList -> {
@@ -245,20 +271,19 @@ public class ActivityRecyclerNews extends AppCompatActivity {
     }
 
     private String getNewsCategory(){
-        return RestAPI.mSections[mSpinner.getSelectedItemPosition()];
+        return RestApi.mSections[mSpinner.getSelectedItemPosition()];
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_about, menu);
-        return true;
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_about, menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_about:
-                startActivity(new Intent(this, ActivityAbout.class));
+                mListener.onNewsItemClicked(MainActivity.TAG_ABOUT, null);
                 break;
             default: throw new IllegalArgumentException(getString(R.string.error_no_id)+": "+item.getItemId());
         }

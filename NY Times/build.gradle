@@ -53,4 +53,5 @@ dependencies {
     implementation "androidx.room:room-runtime:2.1.0-alpha02"
     annotationProcessor "androidx.room:room-compiler:2.1.0-alpha02"
     implementation 'android.arch.persistence.room:rxjava2:1.1.1'
+    implementation 'me.relex:circleindicator:2.1.0'
 }

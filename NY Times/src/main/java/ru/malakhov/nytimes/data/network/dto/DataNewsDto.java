@@ -6,13 +6,13 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class DataNewsDTO {
+public class DataNewsDto {
 
     @SerializedName("results")
     @Expose
-    private List<ResultDTO> mResults;
+    private List<ResultDto> mResults;
 
-    public List<ResultDTO> getResults() {
+    public List<ResultDto> getResults() {
         return mResults;
     }
 }

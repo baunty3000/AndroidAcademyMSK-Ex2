@@ -4,7 +4,7 @@ package ru.malakhov.nytimes.data.network.dto;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 
-public class MultimediumGTO {
+public class MultimediumDto {
 
     @SerializedName("url")
     @Expose

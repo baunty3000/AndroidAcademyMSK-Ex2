@@ -18,6 +18,9 @@
     <dimen name="item_image_size">100dp</dimen>
 
     <dimen name="news_image_height">260dp</dimen>
-    <dimen name="image_intro_width">300dp</dimen>
-    <dimen name="image_intro_height">600dp</dimen>
+    <dimen name="indicator_size">20dp</dimen>
+    <dimen name="intro_image_width_port">250dp</dimen>
+    <dimen name="intro_image_height_port">500dp</dimen>
+    <dimen name="intro_image_width_land">150dp</dimen>
+    <dimen name="intro_image_height_land">270dp</dimen>
 </resources>

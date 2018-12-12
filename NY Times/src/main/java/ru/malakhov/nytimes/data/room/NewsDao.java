@@ -10,7 +10,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 @Dao
-public interface NewsDAO {
+public interface NewsDao {
 
     @Query("SELECT * FROM news")
     List<NewsEntity> getAll();
